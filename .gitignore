@@ -21,4 +21,4 @@
 *.app
 
 #files
-./flyfight_branch/frameworks
+flyfight_branch/frameworks/
