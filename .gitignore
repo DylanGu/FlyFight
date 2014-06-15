@@ -20,5 +20,9 @@
 *.out
 *.app
 
+# swap for sublime
+*.swp
+
 #files
 flyfight_branch/frameworks/cocos2d-x/
+FlyFight.wiki/
