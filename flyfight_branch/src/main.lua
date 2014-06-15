@@ -2,11 +2,27 @@ require "Cocos2d"
 require "Cocos2dConstants"
 
 -- cclog
-cclog = function(...)
-    print(string.format(...))
-end
+cc.FileUtils:getInstance():addSearchResolutionsOrder("src");
+cc.FileUtils:getInstance():addSearchResolutionsOrder("src/util");
+cc.FileUtils:getInstance():addSearchResolutionsOrder("src/language");
+cc.FileUtils:getInstance():addSearchResolutionsOrder("res");
 
--- for CCLuaEngine traceback
+require "utils"
+require "actor"
+require "language_loader"
+
+local a = actor.CreateActor("snowcold")
+a:show()
+
+setLanguage("cn")
+print("!!! Lan:" .. getLuaString("lan_name"))
+
+setLanguage("en")
+print("!!! Lan:" .. getLuaString("lan_name"))
+
+setLanguage("jp")
+print("!!! LanJP...:" .. getLuaString("lan_name"))
+
 function __G__TRACKBACK__(msg)
     cclog("----------------------------------------")
     cclog("LUA ERROR: " .. tostring(msg) .. "\n")
@@ -15,13 +31,18 @@ function __G__TRACKBACK__(msg)
     return msg
 end
 
+function reload( moduleName )
+    print("!!!!!reload module = " .. moduleName)
+    package.loaded[moduleName] = nil
+    require(moduleName)
+end
+
 local function main()
     collectgarbage("collect")
     -- avoid memory leak
     collectgarbage("setpause", 100)
     collectgarbage("setstepmul", 5000)
-	cc.FileUtils:getInstance():addSearchResolutionsOrder("src");
-	cc.FileUtils:getInstance():addSearchResolutionsOrder("res");
+
 	local schedulerID = 0
     --support debug
     local targetPlatform = cc.Application:getInstance():getTargetPlatform()
@@ -32,14 +53,34 @@ local function main()
 		--require('debugger')()
         
     end
-    require "hello2"
-    cclog("result is " .. myadd(1, 1))
-
-    ---------------
 
     local visibleSize = cc.Director:getInstance():getVisibleSize()
     local origin = cc.Director:getInstance():getVisibleOrigin()
 
+    -----------------------------------------
+    local function touchEvent(sender,eventType)
+        if eventType == ccui.TouchEventType.began then
+            --self._displayValueLabel:setString("Touch Down")
+        elseif eventType == ccui.TouchEventType.moved then
+            --self._displayValueLabel:setString("Touch Move")
+        elseif eventType == ccui.TouchEventType.ended then
+            --self._displayValueLabel:setString("Touch Up")
+        elseif eventType == ccui.TouchEventType.canceled then
+            --self._displayValueLabel:setString("Touch Cancelled")
+        end
+        print("EVENT_TYPE : " .. eventType)
+    end  
+
+    local function createSimpleButton( )
+        local button = ccui.Button:create()
+        button:setTouchEnabled(true)
+        button:loadTextures("res/menu1.png", "res/menu2.png", "")
+        button:setPosition(cc.p(visibleSize.width / 2.0 + 120, visibleSize.height / 2.0))        
+        button:addTouchEventListener(touchEvent)
+        return button   
+    end
+
+    -----------------------------------------
     -- add the moving dog
     local function creatDog()
         local frameWidth = 105
@@ -143,6 +184,8 @@ local function main()
             cclog("onTouchEnded: %0.2f, %0.2f", location.x, location.y)
             touchBeginPoint = nil
             spriteDog.isPaused = false
+
+            --reload("actor")
         end
 
         local listener = cc.EventListenerTouchOneByOne:create()
@@ -221,6 +264,7 @@ local function main()
     local sceneGame = cc.Scene:create()
     sceneGame:addChild(createLayerFarm())
     sceneGame:addChild(createLayerMenu())
+    sceneGame:addChild(createSimpleButton())
 	
 	if cc.Director:getInstance():getRunningScene() then
 		cc.Director:getInstance():replaceScene(sceneGame)

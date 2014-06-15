@@ -17,6 +17,8 @@
 		15A8A4841834C73500142BE0 /* libcocos2dx-extensions Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A4191834BDA200142BE0 /* libcocos2dx-extensions Mac.a */; };
 		15A8A4851834C73500142BE0 /* libCocosDenshion Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A41F1834BDA200142BE0 /* libCocosDenshion Mac.a */; };
 		15A8A4881834C90F00142BE0 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A4871834C90E00142BE0 /* libcurl.dylib */; };
+		18B4E9A0194DE9AB009812DF /* touch.sh in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E99F194DE9AB009812DF /* touch.sh */; };
+		18B4E9A1194DE9AB009812DF /* touch.sh in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E99F194DE9AB009812DF /* touch.sh */; };
 		1AF4C403178663F200122817 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF4C402178663F200122817 /* libz.dylib */; };
 		5023811817EBBCAC00990C9B /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5023810817EBBCAC00990C9B /* AppController.mm */; };
 		5023811917EBBCAC00990C9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023810917EBBCAC00990C9B /* Default-568h@2x.png */; };
@@ -278,6 +280,7 @@
 		15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = "../../cocos2d-x/build/cocos2d_libs.xcodeproj"; sourceTree = "<group>"; };
 		15A8A4871834C90E00142BE0 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		15C1568D1683131500D239F2 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = "../../cocos2d-x/cocos2dx/platform/third_party/ios/libraries/libcurl.a"; sourceTree = "<group>"; };
+		18B4E99F194DE9AB009812DF /* touch.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = touch.sh; path = ../../../touch.sh; sourceTree = "<group>"; };
 		1AF4C402178663F200122817 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5023810717EBBCAC00990C9B /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		5023810817EBBCAC00990C9B /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = "<group>"; };
@@ -411,6 +414,14 @@
 				15A8A42D1834BDA200142BE0 /* libCocosDenshion iOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		18B4E99B194DBF7E009812DF /* common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = common;
+			path = ../Classes/common;
 			sourceTree = "<group>";
 		};
 		1A0227A417A3AA1A00B867AD /* Lua Common */ = {
@@ -547,6 +558,7 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				18B4E99B194DBF7E009812DF /* common */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
 			);
@@ -556,6 +568,7 @@
 		F293BC4615EB859D00256477 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18B4E99F194DE9AB009812DF /* touch.sh */,
 				C03781B718BF655400FE4F13 /* res */,
 				C03781B818BF655400FE4F13 /* src */,
 			);
@@ -570,6 +583,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5023816817EBBCE400990C9B /* Build configuration list for PBXNativeTarget "flyfight_branch Mac" */;
 			buildPhases = (
+				18B4E9A2194DE9B6009812DF /* ShellScript */,
 				5023813117EBBCE400990C9B /* Sources */,
 				5023813617EBBCE400990C9B /* Frameworks */,
 				5023814617EBBCE400990C9B /* Resources */,
@@ -593,6 +607,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F293B6C415EB7BEA00256477 /* Build configuration list for PBXNativeTarget "flyfight_branch iOS" */;
 			buildPhases = (
+				18B4E99C194DE71E009812DF /* ShellScript */,
 				F293B3C415EB7BE500256477 /* Sources */,
 				F293B3C515EB7BE500256477 /* Frameworks */,
 				F293B3C615EB7BE500256477 /* Resources */,
@@ -761,6 +776,7 @@
 				C03781D018BF656A00FE4F13 /* AudioEngine.lua in Resources */,
 				C03781D818BF656A00FE4F13 /* CocoStudio.lua in Resources */,
 				C03781DC18BF656A00FE4F13 /* DeprecatedClass.lua in Resources */,
+				18B4E9A1194DE9AB009812DF /* touch.sh in Resources */,
 				C03781F218BF656A00FE4F13 /* StudioConstants.lua in Resources */,
 				C03781EA18BF656A00FE4F13 /* luaj.lua in Resources */,
 				C03781DE18BF656A00FE4F13 /* DeprecatedEnum.lua in Resources */,
@@ -784,6 +800,7 @@
 				5023811917EBBCAC00990C9B /* Default-568h@2x.png in Resources */,
 				C03781D318BF656A00FE4F13 /* Cocos2d.lua in Resources */,
 				5091733917ECE17A00D62437 /* Icon-58.png in Resources */,
+				18B4E9A0194DE9AB009812DF /* touch.sh in Resources */,
 				C03781ED18BF656A00FE4F13 /* Opengl.lua in Resources */,
 				C03781F118BF656A00FE4F13 /* StudioConstants.lua in Resources */,
 				5023811F17EBBCAC00990C9B /* Icon-152.png in Resources */,
@@ -813,6 +830,35 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18B4E99C194DE71E009812DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Users/apple/develop/workplace/cocos2d-x-3.1/projects/FlyFight/flyfight_branch/touch.sh";
+		};
+		18B4E9A2194DE9B6009812DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Users/apple/develop/workplace/cocos2d-x-3.1/projects/FlyFight/flyfight_branch/touch.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5023813117EBBCE400990C9B /* Sources */ = {
