@@ -19,3 +19,6 @@
 *.exe
 *.out
 *.app
+
+#files
+./flyfight_branch/frameworks
