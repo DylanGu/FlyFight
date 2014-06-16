@@ -43,6 +43,5 @@ function setLanguage( language_name )
 end
 
 function getLuaString( key )
-    print("Key = " .. key)
     return Lan.string[key]
 end
