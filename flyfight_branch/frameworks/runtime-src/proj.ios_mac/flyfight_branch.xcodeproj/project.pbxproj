@@ -52,6 +52,10 @@
 		50D7C96C17EBBEDF005D0B91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96B17EBBEDF005D0B91 /* OpenGL.framework */; };
 		50D7C96E17EBBEE6005D0B91 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96D17EBBEE6005D0B91 /* AppKit.framework */; };
 		50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96F17EBBEEC005D0B91 /* IOKit.framework */; };
+		6D9E910E194EBB88009AFBB4 /* lua_tinker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */; };
+		6D9E910F194EBB88009AFBB4 /* lua_tinker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */; };
+		6D9E9112194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E9110194EBBF7009AFBB4 /* lua_tinker_manager.cpp */; };
+		6D9E9113194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E9110194EBBF7009AFBB4 /* lua_tinker_manager.cpp */; };
 		C03781B918BF655400FE4F13 /* res in Resources */ = {isa = PBXBuildFile; fileRef = C03781B718BF655400FE4F13 /* res */; };
 		C03781BA18BF655400FE4F13 /* res in Resources */ = {isa = PBXBuildFile; fileRef = C03781B718BF655400FE4F13 /* res */; };
 		C03781BB18BF655400FE4F13 /* src in Resources */ = {isa = PBXBuildFile; fileRef = C03781B818BF655400FE4F13 /* src */; };
@@ -314,6 +318,10 @@
 		50D7C96B17EBBEDF005D0B91 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		50D7C96D17EBBEE6005D0B91 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		50D7C96F17EBBEEC005D0B91 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_tinker.cpp; sourceTree = "<group>"; };
+		6D9E910D194EBB88009AFBB4 /* lua_tinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_tinker.h; sourceTree = "<group>"; };
+		6D9E9110194EBBF7009AFBB4 /* lua_tinker_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_tinker_manager.cpp; sourceTree = "<group>"; };
+		6D9E9111194EBBF7009AFBB4 /* lua_tinker_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_tinker_manager.h; sourceTree = "<group>"; };
 		C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "../../cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
 		C03781B718BF655400FE4F13 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../res; sourceTree = "<group>"; };
 		C03781B818BF655400FE4F13 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../src; sourceTree = "<group>"; };
@@ -416,14 +424,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18B4E99B194DBF7E009812DF /* common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = common;
-			path = ../Classes/common;
-			sourceTree = "<group>";
-		};
 		1A0227A417A3AA1A00B867AD /* Lua Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +498,26 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		6D9E910A194EBB88009AFBB4 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				6D9E910B194EBB88009AFBB4 /* scipt */,
+			);
+			name = engine;
+			path = ../Classes/engine;
+			sourceTree = "<group>";
+		};
+		6D9E910B194EBB88009AFBB4 /* scipt */ = {
+			isa = PBXGroup;
+			children = (
+				6D9E9110194EBBF7009AFBB4 /* lua_tinker_manager.cpp */,
+				6D9E9111194EBBF7009AFBB4 /* lua_tinker_manager.h */,
+				6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */,
+				6D9E910D194EBB88009AFBB4 /* lua_tinker.h */,
+			);
+			path = scipt;
+			sourceTree = "<group>";
+		};
 		C03781AF18BF654500FE4F13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,7 +578,7 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				18B4E99B194DBF7E009812DF /* common */,
+				6D9E910A194EBB88009AFBB4 /* engine */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
 			);
@@ -843,7 +863,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Users/apple/develop/workplace/cocos2d-x-3.1/projects/FlyFight/flyfight_branch/touch.sh";
+			shellScript = "/Users/coldouyang/develop/workspace/cocos2d-x-3.1/project/FlyFight/flyfight_branch/touch.sh";
 		};
 		18B4E9A2194DE9B6009812DF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -856,7 +876,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Users/apple/develop/workplace/cocos2d-x-3.1/projects/FlyFight/flyfight_branch/touch.sh";
+			shellScript = "/Users/coldouyang/develop/workspace/cocos2d-x-3.1/project/FlyFight/flyfight_branch/touch.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -865,8 +885,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D9E910F194EBB88009AFBB4 /* lua_tinker.cpp in Sources */,
 				C06E23C418CEF9740093C81A /* main.cpp in Sources */,
 				5023813317EBBCE400990C9B /* AppDelegate.cpp in Sources */,
+				6D9E9113194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,6 +900,8 @@
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
+				6D9E910E194EBB88009AFBB4 /* lua_tinker.cpp in Sources */,
+				6D9E9112194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

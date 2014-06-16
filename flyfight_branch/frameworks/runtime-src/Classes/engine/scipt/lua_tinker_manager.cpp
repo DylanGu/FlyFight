@@ -13,9 +13,10 @@
 //////////////////////////////////////////////////////////////
 #include "lua_tinker_manager.h"
 #include "CCLuaEngine.h"
-#include "lua_cocostudio_gui.h"
-#include "game/script_export/lua_client_export.h"
-#include "lua_cjson.h"
+#include "lua.h"
+//#include "lua_cocostudio_gui.h"
+//#include "game/script_export/lua_client_export.h"
+//#include "lua_cjson.h"
 
 
 int GetLuaSoundEffect(const char *key)
@@ -33,14 +34,20 @@ char* GetLuaText(const char *key)
   return LuaTinkerManager::GetInstance().GetLuaText<char *>(key);
 }
 
+int luaL_loadstringEx(lua_State *L, const char *s, size_t len) {
+    return luaL_loadbuffer(L, s, len, s);
+}
+
+#define luaL_dostringEx(L, s, l) \
+(luaL_loadstringEx(L, s, l) || lua_pcall(L, 0, LUA_MULTRET, 0))
 
 LuaTinkerManager::LuaTinkerManager()
 {
-  CCLuaStack *pStack = CCLuaEngine::defaultEngine()->getLuaStack();
+  LuaStack *pStack = LuaEngine::getInstance()->getLuaStack();
   curLuaState_ = pStack->getLuaState();
-  std::string fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename("script/main.lua");
-  unsigned long fileSize = 0;
-  unsigned char* buffer = CCFileUtils::sharedFileUtils()->getFileData("script/main.lua", "rt", &fileSize);
+  std::string fullPath = FileUtils::getInstance()->fullPathForFilename("script/main.lua");
+  ssize_t fileSize = 0;
+  unsigned char* buffer = FileUtils::getInstance()->getFileData("script/main.lua", "rt", &fileSize);
   int ret = luaL_dostringEx(this->curLuaState_, (char*)buffer, fileSize);
 	free(buffer);
 }
@@ -59,9 +66,9 @@ bool LuaTinkerManager::checkAnyLoadFile(string filePath)
 }
 
 bool LuaTinkerManager::registerAllCustomLuaApi() {
-  tolua_cocostudio_gui_open(curLuaState_);
-  tolua_lua_client_export_open(curLuaState_);
-  luaopen_cjson(curLuaState_);
-  luaopen_cjson_safe(curLuaState_);
+  //tolua_cocostudio_gui_open(curLuaState_);
+  //tolua_lua_client_export_open(curLuaState_);
+  //luaopen_cjson(curLuaState_);
+  //luaopen_cjson_safe(curLuaState_);
   return true;
 }

@@ -22,7 +22,7 @@
 
 # swap for sublime
 *.swp
-*.DS_Stor
+*S_Store
 
 #files
 flyfight_branch/frameworks/cocos2d-x/
