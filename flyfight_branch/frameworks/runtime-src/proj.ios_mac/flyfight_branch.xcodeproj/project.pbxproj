@@ -863,7 +863,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Users/coldouyang/develop/workspace/cocos2d-x-3.1/project/FlyFight/flyfight_branch/touch.sh";
+			shellScript = "find ${PROJECT_DIR}/../../../res -type d -exec touch -cm {} \\;";
 		};
 		18B4E9A2194DE9B6009812DF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -876,7 +876,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Users/coldouyang/develop/workspace/cocos2d-x-3.1/project/FlyFight/flyfight_branch/touch.sh";
+			shellScript = "find ${PROJECT_DIR}/../../../res -type d -exec touch -cm {} \\;";
 		};
 /* End PBXShellScriptBuildPhase section */
 
