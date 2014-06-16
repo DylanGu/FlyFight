@@ -45,9 +45,9 @@ LuaTinkerManager::LuaTinkerManager()
 {
   LuaStack *pStack = LuaEngine::getInstance()->getLuaStack();
   curLuaState_ = pStack->getLuaState();
-  std::string fullPath = FileUtils::getInstance()->fullPathForFilename("script/main.lua");
+  std::string fullPath = FileUtils::getInstance()->fullPathForFilename("src/main.lua");
   ssize_t fileSize = 0;
-  unsigned char* buffer = FileUtils::getInstance()->getFileData("script/main.lua", "rt", &fileSize);
+  unsigned char* buffer = FileUtils::getInstance()->getFileData("src/main.lua", "rt", &fileSize);
   int ret = luaL_dostringEx(this->curLuaState_, (char*)buffer, fileSize);
 	free(buffer);
 }

@@ -2,6 +2,7 @@
 #include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
+#include "lua_tinker_manager.h"
 
 using namespace CocosDenshion;
 
@@ -37,10 +38,17 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     auto engine = LuaEngine::getInstance();
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
-    if (engine->executeScriptFile("src/main.lua")) {
+    
+    if (engine->executeScriptFile("src/main.lua"))
+    {
         return false;
     }
     
+    char* msg = LuaTinkerManager::GetInstance().CallLuaFunc<char*>("src/util/simpleTest.lua", "PleaseCallMe", 1);
+    log(msg);
+    log("!!!!!!!!!!!!!!!!!");
+    msg = LuaTinkerManager::GetInstance().CallLuaFunc<char*>("src/util/simpleTest.lua", "PleaseCallMe", 3);
+    log(msg);
     return true;
 }
 
