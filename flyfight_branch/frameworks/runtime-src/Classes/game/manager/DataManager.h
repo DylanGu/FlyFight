@@ -12,6 +12,8 @@
 #include <iostream>
 #include "cocos2d.h"
 
+class AbilityDataTable;
+
 class DataManager
 {
     
@@ -25,6 +27,10 @@ protected:
     
     bool init();
     
+private:
+    
+    AbilityDataTable* mAbilityDataTable_;
+
 };
 
 #endif /* defined(__flyfight_branch__DataManager__) */

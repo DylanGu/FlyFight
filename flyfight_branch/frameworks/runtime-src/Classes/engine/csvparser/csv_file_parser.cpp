@@ -8,7 +8,7 @@
 
 USING_NS_CC;
 
-#define   CSV_DATA_PATH   "csv/"
+#define   CSV_DATA_PATH   "data/"
 
 
 CSVFileParser::CSVFileParser(void)
