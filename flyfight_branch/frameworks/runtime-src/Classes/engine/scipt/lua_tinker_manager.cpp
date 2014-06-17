@@ -1,16 +1,4 @@
-//////////////////////////////////////////////////////////////
-//
-//  Copyright 2008 - 2012 TaoMee Inc. 
-//
-//      FileName: lua_tinker_manager.cpp
-//        Author: robbiepan
-//          Date: 2013/9/6 16:34
-//   Description: Copy from Ahero 
-//
-// History:
-//      <author>    <time>        <descript>
-//     robbiepan    2013/9/6      add
-//////////////////////////////////////////////////////////////
+
 #include "lua_tinker_manager.h"
 #include "CCLuaEngine.h"
 #include "lua.h"
