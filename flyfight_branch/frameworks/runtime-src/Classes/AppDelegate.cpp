@@ -3,6 +3,7 @@
 #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
 #include "lua_tinker_manager.h"
+#include "DataManager.h"
 
 using namespace CocosDenshion;
 
@@ -49,6 +50,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     log("!!!!!!!!!!!!!!!!!");
     msg = LuaTinkerManager::GetInstance().CallLuaFunc<char*>("src/util/simpleTest.lua", "PleaseCallMe", 3);
     log(msg);
+    
+    DataManager& m = DataManager::GetInstance();
     return true;
 }
 

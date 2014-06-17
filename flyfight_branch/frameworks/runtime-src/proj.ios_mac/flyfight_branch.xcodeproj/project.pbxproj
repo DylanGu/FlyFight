@@ -52,6 +52,9 @@
 		50D7C96C17EBBEDF005D0B91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96B17EBBEDF005D0B91 /* OpenGL.framework */; };
 		50D7C96E17EBBEE6005D0B91 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96D17EBBEE6005D0B91 /* AppKit.framework */; };
 		50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96F17EBBEEC005D0B91 /* IOKit.framework */; };
+		6D5EE885195032D7006A0266 /* csv_file_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D5EE883195032D7006A0266 /* csv_file_parser.cpp */; };
+		6D5EE88B19503B5B006A0266 /* DataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D5EE88919503B5B006A0266 /* DataManager.cpp */; };
+		6D5EE88C19503B5B006A0266 /* DataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D5EE88919503B5B006A0266 /* DataManager.cpp */; };
 		6D9E910E194EBB88009AFBB4 /* lua_tinker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */; };
 		6D9E910F194EBB88009AFBB4 /* lua_tinker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */; };
 		6D9E9112194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E9110194EBBF7009AFBB4 /* lua_tinker_manager.cpp */; };
@@ -318,6 +321,10 @@
 		50D7C96B17EBBEDF005D0B91 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		50D7C96D17EBBEE6005D0B91 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		50D7C96F17EBBEEC005D0B91 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		6D5EE883195032D7006A0266 /* csv_file_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = csv_file_parser.cpp; sourceTree = "<group>"; };
+		6D5EE884195032D7006A0266 /* csv_file_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = csv_file_parser.h; sourceTree = "<group>"; };
+		6D5EE88919503B5B006A0266 /* DataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataManager.cpp; sourceTree = "<group>"; };
+		6D5EE88A19503B5B006A0266 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_tinker.cpp; sourceTree = "<group>"; };
 		6D9E910D194EBB88009AFBB4 /* lua_tinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_tinker.h; sourceTree = "<group>"; };
 		6D9E9110194EBBF7009AFBB4 /* lua_tinker_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_tinker_manager.cpp; sourceTree = "<group>"; };
@@ -498,9 +505,29 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		6D5EE882195032D7006A0266 /* csvparser */ = {
+			isa = PBXGroup;
+			children = (
+				6D5EE883195032D7006A0266 /* csv_file_parser.cpp */,
+				6D5EE884195032D7006A0266 /* csv_file_parser.h */,
+			);
+			path = csvparser;
+			sourceTree = "<group>";
+		};
+		6D5EE88819503ADE006A0266 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				6D5EE88919503B5B006A0266 /* DataManager.cpp */,
+				6D5EE88A19503B5B006A0266 /* DataManager.h */,
+			);
+			name = game;
+			path = ../Classes/game;
+			sourceTree = "<group>";
+		};
 		6D9E910A194EBB88009AFBB4 /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				6D5EE882195032D7006A0266 /* csvparser */,
 				6D9E910B194EBB88009AFBB4 /* scipt */,
 			);
 			name = engine;
@@ -578,6 +605,7 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6D5EE88819503ADE006A0266 /* game */,
 				6D9E910A194EBB88009AFBB4 /* engine */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
@@ -886,6 +914,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D9E910F194EBB88009AFBB4 /* lua_tinker.cpp in Sources */,
+				6D5EE88C19503B5B006A0266 /* DataManager.cpp in Sources */,
 				C06E23C418CEF9740093C81A /* main.cpp in Sources */,
 				5023813317EBBCE400990C9B /* AppDelegate.cpp in Sources */,
 				6D9E9113194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */,
@@ -900,6 +929,8 @@
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
+				6D5EE885195032D7006A0266 /* csv_file_parser.cpp in Sources */,
+				6D5EE88B19503B5B006A0266 /* DataManager.cpp in Sources */,
 				6D9E910E194EBB88009AFBB4 /* lua_tinker.cpp in Sources */,
 				6D9E9112194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */,
 			);

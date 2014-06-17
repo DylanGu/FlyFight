@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/engine/scipt/lua_tinker_manager.cpp"
-            timestampString = "424591222.39091"
+            timestampString = "424686371.831702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "LuaTinkerManager::LuaTinkerManager()"
             landmarkType = "5">
          </BreakpointContent>
