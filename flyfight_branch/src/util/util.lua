@@ -1,4 +1,4 @@
---[[]]
+--[[--暂时不可用]]
 module ("util",  package.seeall)
 require("script/config/ui_tag_table")
 
