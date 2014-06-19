@@ -443,6 +443,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1827E3431953380700BA881F /* script_export */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = script_export;
+			sourceTree = "<group>";
+		};
 		18EBB04E1950854C00B79A90 /* data_table */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +563,7 @@
 		6D5EE88819503ADE006A0266 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				1827E3431953380700BA881F /* script_export */,
 				18EBB04E1950854C00B79A90 /* data_table */,
 				18EBB0511950854C00B79A90 /* manager */,
 			);
