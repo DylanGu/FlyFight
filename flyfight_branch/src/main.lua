@@ -7,7 +7,8 @@ local search_path =
     "src/util",
     "src/language",
     "src/logic",
-    "res"
+    "res",
+    "src/scene"
 }
 
 local init_module =
