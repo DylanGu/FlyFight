@@ -40,10 +40,10 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto engine = LuaEngine::getInstance();
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     
-    if (engine->executeScriptFile("src/main.lua"))
-    {
-        return false;
-    }
+    //if (engine->executeScriptFile("src/main.lua"))
+    //{
+    //    return false;
+    //}
     
     char* msg = LuaTinkerManager::GetInstance().CallLuaFunc<char*>("src/util/simpleTest.lua", "PleaseCallMe", 1);
     log(msg);

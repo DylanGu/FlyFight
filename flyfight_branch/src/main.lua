@@ -1,27 +1,26 @@
 require "Cocos2d"
 require "Cocos2dConstants"
 
--- cclog
-cc.FileUtils:getInstance():addSearchResolutionsOrder("src");
-cc.FileUtils:getInstance():addSearchResolutionsOrder("src/util");
-cc.FileUtils:getInstance():addSearchResolutionsOrder("src/language");
-cc.FileUtils:getInstance():addSearchResolutionsOrder("res");
+local search_path = 
+{
+    "src",
+    "src/util",
+    "src/language",
+    "src/logic",
+    "res",
+    "src/scene"
+}
 
-require "utils"
-require "actor"
-require "language_loader"
+local init_module =
+{
+    "utils",
+    "actor",
+    "language_loader"
+}
 
-local a = actor.CreateActor("snowcold")
-a:show()
-
-setLanguage("cn")
-print("!!! Lan:" .. getLuaString("lan_name"))
-
-setLanguage("en")
-print("!!! Lan:" .. getLuaString("lan_name"))
-
-setLanguage("jp")
-print("!!! LanJP...:" .. getLuaString("lan_name"))
+function cclog( ... )
+    print(string.format(...))
+end
 
 function __G__TRACKBACK__(msg)
     cclog("----------------------------------------")
@@ -31,249 +30,62 @@ function __G__TRACKBACK__(msg)
     return msg
 end
 
-function reload( moduleName )
-    print("!!!!!reload module = " .. moduleName)
-    package.loaded[moduleName] = nil
-    require(moduleName)
+function reload_file(filename)
+    package.loaded[filename] = nil  
+    require( filename )
 end
 
 local function main()
     collectgarbage("collect")
-    -- avoid memory leak
     collectgarbage("setpause", 100)
     collectgarbage("setstepmul", 5000)
 
-	local schedulerID = 0
-    --support debug
-    local targetPlatform = cc.Application:getInstance():getTargetPlatform()
-    if (cc.PLATFORM_OS_IPHONE == targetPlatform) or (cc.PLATFORM_OS_IPAD == targetPlatform) or 
-       (cc.PLATFORM_OS_ANDROID == targetPlatform) or (cc.PLATFORM_OS_WINDOWS == targetPlatform) or
-       (cc.PLATFORM_OS_MAC == targetPlatform) then
-		--require('debugger')()
+    -----------------------------------
+    --默认寻找路径初始化
+    local function registAllSearchPath()
+        for k,v in pairs(search_path) do
+            cc.FileUtils:getInstance():addSearchResolutionsOrder(v);
+        end
     end
-
-    local visibleSize = cc.Director:getInstance():getVisibleSize()
-    local origin = cc.Director:getInstance():getVisibleOrigin()
-
-    -----------------------------------------
-    local function touchEvent(sender,eventType)
-        if eventType == ccui.TouchEventType.began then
-            --self._displayValueLabel:setString("Touch Down")
-        elseif eventType == ccui.TouchEventType.moved then
-            --self._displayValueLabel:setString("Touch Move")
-        elseif eventType == ccui.TouchEventType.ended then
-            --self._displayValueLabel:setString("Touch Up")
-        elseif eventType == ccui.TouchEventType.canceled then
-            --self._displayValueLabel:setString("Touch Cancelled")
+    registAllSearchPath()
+    -----------------------------------
+    --必要模块初始化
+    local function loadInitModule()
+        for k,v in pairs(init_module) do
+            require(v)
         end
-        print("EVENT_TYPE : " .. eventType)
-    end  
-
-    local function createSimpleButton( )
-        local button = ccui.Button:create()
-        button:setTouchEnabled(true)
-        button:loadTextures("res/menu1.png", "res/menu2.png", "")
-        button:setPosition(cc.p(visibleSize.width / 2.0 + 120, visibleSize.height / 2.0))        
-        button:addTouchEventListener(touchEvent)
-        return button   
     end
-
-    -----------------------------------------
-    -- add the moving dog
-    local function creatDog()
-        local frameWidth = 105
-        local frameHeight = 95
-
-        -- create dog animate
-        local textureDog = cc.Director:getInstance():getTextureCache():addImage("dog.png")
-        local rect = cc.rect(0, 0, frameWidth, frameHeight)
-        local frame0 = cc.SpriteFrame:createWithTexture(textureDog, rect)
-        rect = cc.rect(frameWidth, 0, frameWidth, frameHeight)
-        local frame1 = cc.SpriteFrame:createWithTexture(textureDog, rect)
-
-        local spriteDog = cc.Sprite:createWithSpriteFrame(frame0)
-        spriteDog.isPaused = false
-        spriteDog:setPosition(origin.x, origin.y + visibleSize.height / 4 * 3)
---[[
-        local animFrames = CCArray:create()
-
-        animFrames:addObject(frame0)
-        animFrames:addObject(frame1)
-]]--
-
-        local animation = cc.Animation:createWithSpriteFrames({frame0,frame1}, 0.5)
-        local animate = cc.Animate:create(animation);
-        spriteDog:runAction(cc.RepeatForever:create(animate))
-
-        -- moving dog at every frame
-        local function tick()
-            if spriteDog.isPaused then return end
-            local x, y = spriteDog:getPosition()
-            if x > origin.x + visibleSize.width then
-                x = origin.x
-            else
-                x = x + 1
-            end
-
-            spriteDog:setPositionX(x)
-        end
-
-        schedulerID = cc.Director:getInstance():getScheduler():scheduleScriptFunc(tick, 0, false)
-
-        return spriteDog
-    end
-
-    -- create farm
-    local function createLayerFarm()
-        local layerFarm = cc.Layer:create()
-
-        -- add in farm background
-        local bg = cc.Sprite:create("farm.jpg")
-        bg:setPosition(origin.x + visibleSize.width / 2 + 80, origin.y + visibleSize.height / 2)
-        layerFarm:addChild(bg)
-
-        -- add land sprite
-        for i = 0, 3 do
-            for j = 0, 1 do
-                local spriteLand = cc.Sprite:create("land.png")
-                spriteLand:setPosition(200 + j * 180 - i % 2 * 90, 10 + i * 95 / 2)
-                layerFarm:addChild(spriteLand)
-            end
-        end
-
-        -- add crop
-        local frameCrop = cc.SpriteFrame:create("crop.png", cc.rect(0, 0, 105, 95))
-        for i = 0, 3 do
-            for j = 0, 1 do
-                local spriteCrop = cc.Sprite:createWithSpriteFrame(frameCrop);
-                spriteCrop:setPosition(10 + 200 + j * 180 - i % 2 * 90, 30 + 10 + i * 95 / 2)
-                layerFarm:addChild(spriteCrop)
-            end
-        end
-
-        -- add moving dog
-        local spriteDog = creatDog()
-        layerFarm:addChild(spriteDog)
-
-        -- handing touch events
-        local touchBeginPoint = nil
-        local function onTouchBegan(touch, event)
-            local location = touch:getLocation()
-            cclog("onTouchBegan: %0.2f, %0.2f", location.x, location.y)
-            touchBeginPoint = {x = location.x, y = location.y}
-            spriteDog.isPaused = true
-            -- CCTOUCHBEGAN event must return true
-            return true
-        end
-
-        local function onTouchMoved(touch, event)
-            local location = touch:getLocation()
-            cclog("onTouchMoved: %0.2f, %0.2f", location.x, location.y)
-            if touchBeginPoint then
-                local cx, cy = layerFarm:getPosition()
-                layerFarm:setPosition(cx + location.x - touchBeginPoint.x,
-                                      cy + location.y - touchBeginPoint.y)
-                touchBeginPoint = {x = location.x, y = location.y}
-            end
-        end
-
-        local function onTouchEnded(touch, event)
-            local location = touch:getLocation()
-            cclog("onTouchEnded: %0.2f, %0.2f", location.x, location.y)
-            touchBeginPoint = nil
-            spriteDog.isPaused = false
-
-            --reload("actor")
-        end
-
-        local listener = cc.EventListenerTouchOneByOne:create()
-        listener:registerScriptHandler(onTouchBegan,cc.Handler.EVENT_TOUCH_BEGAN )
-        listener:registerScriptHandler(onTouchMoved,cc.Handler.EVENT_TOUCH_MOVED )
-        listener:registerScriptHandler(onTouchEnded,cc.Handler.EVENT_TOUCH_ENDED )
-        local eventDispatcher = layerFarm:getEventDispatcher()
-        eventDispatcher:addEventListenerWithSceneGraphPriority(listener, layerFarm)
-        
-        local function onNodeEvent(event)
-           if "exit" == event then
-               cc.Director:getInstance():getScheduler():unscheduleScriptEntry(schedulerID)
-           end
-        end
-        layerFarm:registerScriptHandler(onNodeEvent)
-
-        return layerFarm
-    end
-
-
-    -- create menu
-    local function createLayerMenu()
-        local layerMenu = cc.Layer:create()
-
-        local menuPopup, menuTools, effectID
-
-        local function menuCallbackClosePopup()
-            -- stop test sound effect
-            cc.SimpleAudioEngine:getInstance():stopEffect(effectID)
-            menuPopup:setVisible(false)
-        end
-
-        local function menuCallbackOpenPopup()
-            -- loop test sound effect
-            local effectPath = cc.FileUtils:getInstance():fullPathForFilename("effect1.wav")
-            effectID = cc.SimpleAudioEngine:getInstance():playEffect(effectPath)
-            menuPopup:setVisible(true)
-        end
-
-        -- add a popup menu
-        local menuPopupItem = cc.MenuItemImage:create("menu2.png", "menu2.png")
-        menuPopupItem:setPosition(0, 0)
-        menuPopupItem:registerScriptTapHandler(menuCallbackClosePopup)
-        menuPopup = cc.Menu:create(menuPopupItem)
-        menuPopup:setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2)
-        menuPopup:setVisible(false)
-        layerMenu:addChild(menuPopup)
-        
-        -- add the left-bottom "tools" menu to invoke menuPopup
-        local menuToolsItem = cc.MenuItemImage:create("menu1.png", "menu1.png")
-        menuToolsItem:setPosition(0, 0)
-        menuToolsItem:registerScriptTapHandler(menuCallbackOpenPopup)
-        menuTools = cc.Menu:create(menuToolsItem)
-        local itemWidth = menuToolsItem:getContentSize().width
-        local itemHeight = menuToolsItem:getContentSize().height
-        menuTools:setPosition(origin.x + itemWidth/2, origin.y + itemHeight/2)
-        layerMenu:addChild(menuTools)
-
-        return layerMenu
-    end
-
-    -- play background music, preload effect
-
-    -- uncomment below for the BlackBerry version
-    local bgMusicPath = nil 
-    if (cc.PLATFORM_OS_IPHONE == targetPlatform) or (cc.PLATFORM_OS_IPAD == targetPlatform) then
-        bgMusicPath = cc.FileUtils:getInstance():fullPathForFilename("res/background.caf")
-    else
-        bgMusicPath = cc.FileUtils:getInstance():fullPathForFilename("res/background.mp3")
-    end
-    cc.SimpleAudioEngine:getInstance():playMusic(bgMusicPath, true)
-    local effectPath = cc.FileUtils:getInstance():fullPathForFilename("effect1.wav")
-    cc.SimpleAudioEngine:getInstance():preloadEffect(effectPath)
-
-    -- run
-    local sceneGame = cc.Scene:create()
-    sceneGame:addChild(createLayerFarm())
-    sceneGame:addChild(createLayerMenu())
-    sceneGame:addChild(createSimpleButton())
-	
-	if cc.Director:getInstance():getRunningScene() then
-		cc.Director:getInstance():replaceScene(sceneGame)
-	else
-		cc.Director:getInstance():runWithScene(sceneGame)
-	end
-
+    loadInitModule()
+    -----------------------------------
+    --环境初始化
+    language_loader.setLanguage("cn")
+    print("#Current language:" .. getLuaString("lan_name"))
+    -----------------------------------
 end
 
 
 local status, msg = xpcall(main, __G__TRACKBACK__)
+
 if not status then
     error(msg)
 end
+
+---------------------------------------------------------
+--[[
+    local a = actor.CreateActor("snowcold")
+    a:show()
+
+    setLanguage("cn")
+    print("!!! Lan:" .. getLuaString("lan_name"))
+
+    setLanguage("en")
+    print("!!! Lan:" .. getLuaString("lan_name"))
+
+    setLanguage("jp")
+    print("!!! LanJP...:" .. getLuaString("lan_name"))
+
+--]]
+
+
+
+

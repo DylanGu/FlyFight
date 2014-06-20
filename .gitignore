@@ -30,3 +30,5 @@ flyfight_branch/frameworks/cocos2d-x/
 FlyFight.wiki/
 
 flyfight_branch/frameworks/runtime-src/Classes/engine/.DS_Store
+
+*.xcuserstate

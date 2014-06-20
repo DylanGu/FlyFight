@@ -1,3 +1,5 @@
+module(..., package.seeall )
+
 Lan = Lan or {}
 
 Lan.current = nil
@@ -45,3 +47,5 @@ end
 function getLuaString( key )
     return Lan.string[key]
 end
+
+_G.getLuaString = getLuaString
