@@ -17,6 +17,10 @@
 		15A8A4841834C73500142BE0 /* libcocos2dx-extensions Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A4191834BDA200142BE0 /* libcocos2dx-extensions Mac.a */; };
 		15A8A4851834C73500142BE0 /* libCocosDenshion Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A41F1834BDA200142BE0 /* libCocosDenshion Mac.a */; };
 		15A8A4881834C90F00142BE0 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A8A4871834C90E00142BE0 /* libcurl.dylib */; };
+		188AC4F61955A597005EB23C /* lua_tinker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4F21955A597005EB23C /* lua_tinker.cpp */; };
+		188AC4F71955A597005EB23C /* lua_tinker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4F21955A597005EB23C /* lua_tinker.cpp */; };
+		188AC4F81955A597005EB23C /* lua_tinker_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4F41955A597005EB23C /* lua_tinker_manager.cpp */; };
+		188AC4F91955A597005EB23C /* lua_tinker_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4F41955A597005EB23C /* lua_tinker_manager.cpp */; };
 		18B4E9A0194DE9AB009812DF /* touch.sh in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E99F194DE9AB009812DF /* touch.sh */; };
 		18B4E9A1194DE9AB009812DF /* touch.sh in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E99F194DE9AB009812DF /* touch.sh */; };
 		18EBB0541950854C00B79A90 /* ability_data_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EBB04F1950854C00B79A90 /* ability_data_table.cpp */; };
@@ -66,10 +70,6 @@
 		50D7C96E17EBBEE6005D0B91 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96D17EBBEE6005D0B91 /* AppKit.framework */; };
 		50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96F17EBBEEC005D0B91 /* IOKit.framework */; };
 		6D5EE885195032D7006A0266 /* csv_file_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D5EE883195032D7006A0266 /* csv_file_parser.cpp */; };
-		6D9E910E194EBB88009AFBB4 /* lua_tinker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */; };
-		6D9E910F194EBB88009AFBB4 /* lua_tinker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */; };
-		6D9E9112194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E9110194EBBF7009AFBB4 /* lua_tinker_manager.cpp */; };
-		6D9E9113194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E9110194EBBF7009AFBB4 /* lua_tinker_manager.cpp */; };
 		C03781B918BF655400FE4F13 /* res in Resources */ = {isa = PBXBuildFile; fileRef = C03781B718BF655400FE4F13 /* res */; };
 		C03781BA18BF655400FE4F13 /* res in Resources */ = {isa = PBXBuildFile; fileRef = C03781B718BF655400FE4F13 /* res */; };
 		C03781BB18BF655400FE4F13 /* src in Resources */ = {isa = PBXBuildFile; fileRef = C03781B818BF655400FE4F13 /* src */; };
@@ -298,6 +298,10 @@
 		15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = "../../cocos2d-x/build/cocos2d_libs.xcodeproj"; sourceTree = "<group>"; };
 		15A8A4871834C90E00142BE0 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		15C1568D1683131500D239F2 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = "../../cocos2d-x/cocos2dx/platform/third_party/ios/libraries/libcurl.a"; sourceTree = "<group>"; };
+		188AC4F21955A597005EB23C /* lua_tinker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_tinker.cpp; sourceTree = "<group>"; };
+		188AC4F31955A597005EB23C /* lua_tinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_tinker.h; sourceTree = "<group>"; };
+		188AC4F41955A597005EB23C /* lua_tinker_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_tinker_manager.cpp; sourceTree = "<group>"; };
+		188AC4F51955A597005EB23C /* lua_tinker_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_tinker_manager.h; sourceTree = "<group>"; };
 		18B4E99F194DE9AB009812DF /* touch.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = touch.sh; path = ../../../touch.sh; sourceTree = "<group>"; };
 		18EBB04F1950854C00B79A90 /* ability_data_table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ability_data_table.cpp; sourceTree = "<group>"; };
 		18EBB0501950854C00B79A90 /* ability_data_table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ability_data_table.h; sourceTree = "<group>"; };
@@ -345,10 +349,6 @@
 		50D7C96F17EBBEEC005D0B91 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		6D5EE883195032D7006A0266 /* csv_file_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = csv_file_parser.cpp; sourceTree = "<group>"; };
 		6D5EE884195032D7006A0266 /* csv_file_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = csv_file_parser.h; sourceTree = "<group>"; };
-		6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_tinker.cpp; sourceTree = "<group>"; };
-		6D9E910D194EBB88009AFBB4 /* lua_tinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_tinker.h; sourceTree = "<group>"; };
-		6D9E9110194EBBF7009AFBB4 /* lua_tinker_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_tinker_manager.cpp; sourceTree = "<group>"; };
-		6D9E9111194EBBF7009AFBB4 /* lua_tinker_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_tinker_manager.h; sourceTree = "<group>"; };
 		C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "../../cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
 		C03781B718BF655400FE4F13 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../res; sourceTree = "<group>"; };
 		C03781B818BF655400FE4F13 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../src; sourceTree = "<group>"; };
@@ -460,6 +460,17 @@
 				18F9E6391954769600DE8FD2 /* ScriptFunRegister.h */,
 			);
 			path = script_export;
+			sourceTree = "<group>";
+		};
+		188AC4F11955A597005EB23C /* script */ = {
+			isa = PBXGroup;
+			children = (
+				188AC4F21955A597005EB23C /* lua_tinker.cpp */,
+				188AC4F31955A597005EB23C /* lua_tinker.h */,
+				188AC4F41955A597005EB23C /* lua_tinker_manager.cpp */,
+				188AC4F51955A597005EB23C /* lua_tinker_manager.h */,
+			);
+			path = script;
 			sourceTree = "<group>";
 		};
 		18EBB04E1950854C00B79A90 /* data_table */ = {
@@ -586,23 +597,12 @@
 		6D9E910A194EBB88009AFBB4 /* engine */ = {
 			isa = PBXGroup;
 			children = (
+				188AC4F11955A597005EB23C /* script */,
 				18EBB05F195088B200B79A90 /* util */,
 				6D5EE882195032D7006A0266 /* csvparser */,
-				6D9E910B194EBB88009AFBB4 /* scipt */,
 			);
 			name = engine;
 			path = ../Classes/engine;
-			sourceTree = "<group>";
-		};
-		6D9E910B194EBB88009AFBB4 /* scipt */ = {
-			isa = PBXGroup;
-			children = (
-				6D9E9110194EBBF7009AFBB4 /* lua_tinker_manager.cpp */,
-				6D9E9111194EBBF7009AFBB4 /* lua_tinker_manager.h */,
-				6D9E910C194EBB88009AFBB4 /* lua_tinker.cpp */,
-				6D9E910D194EBB88009AFBB4 /* lua_tinker.h */,
-			);
-			path = scipt;
 			sourceTree = "<group>";
 		};
 		C03781AF18BF654500FE4F13 /* Products */ = {
@@ -979,13 +979,13 @@
 				18EBB063195088DA00B79A90 /* utils_string.cpp in Sources */,
 				18F9E63B1954769600DE8FD2 /* ScriptFunRegister.cpp in Sources */,
 				18EBB059195087BC00B79A90 /* ability_data_table.cpp in Sources */,
+				188AC4F71955A597005EB23C /* lua_tinker.cpp in Sources */,
 				18EBB05A195087BC00B79A90 /* DataManager.cpp in Sources */,
+				188AC4F91955A597005EB23C /* lua_tinker_manager.cpp in Sources */,
 				18EBB05B195087BC00B79A90 /* csv_file_parser.cpp in Sources */,
 				18F9E6351954741300DE8FD2 /* fly_fight_logic.cpp in Sources */,
-				6D9E910F194EBB88009AFBB4 /* lua_tinker.cpp in Sources */,
 				C06E23C418CEF9740093C81A /* main.cpp in Sources */,
 				5023813317EBBCE400990C9B /* AppDelegate.cpp in Sources */,
-				6D9E9113194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -994,6 +994,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
+				188AC4F61955A597005EB23C /* lua_tinker.cpp in Sources */,
 				18EBB0551950854C00B79A90 /* DataManager.cpp in Sources */,
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
@@ -1001,10 +1002,9 @@
 				18F9E6341954741300DE8FD2 /* fly_fight_logic.cpp in Sources */,
 				6D5EE885195032D7006A0266 /* csv_file_parser.cpp in Sources */,
 				18EBB0541950854C00B79A90 /* ability_data_table.cpp in Sources */,
-				6D9E910E194EBB88009AFBB4 /* lua_tinker.cpp in Sources */,
 				18F9E63A1954769600DE8FD2 /* ScriptFunRegister.cpp in Sources */,
 				18EBB062195088DA00B79A90 /* utils_string.cpp in Sources */,
-				6D9E9112194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */,
+				188AC4F81955A597005EB23C /* lua_tinker_manager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

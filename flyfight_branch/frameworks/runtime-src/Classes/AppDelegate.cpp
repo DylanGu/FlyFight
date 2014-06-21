@@ -2,9 +2,9 @@
 #include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
-#include "lua_tinker_manager.h"
-#include "DataManager.h"
-#include "ScriptFunRegister.h"
+#include "engine/script/lua_tinker_manager.h"
+#include "game/manager/DataManager.h"
+#include "game/script_export/ScriptFunRegister.h"
 
 using namespace CocosDenshion;
 
