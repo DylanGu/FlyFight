@@ -28,6 +28,10 @@
 		18EBB05B195087BC00B79A90 /* csv_file_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D5EE883195032D7006A0266 /* csv_file_parser.cpp */; };
 		18EBB062195088DA00B79A90 /* utils_string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EBB060195088DA00B79A90 /* utils_string.cpp */; };
 		18EBB063195088DA00B79A90 /* utils_string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EBB060195088DA00B79A90 /* utils_string.cpp */; };
+		18F9E6341954741300DE8FD2 /* fly_fight_logic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18F9E6321954741300DE8FD2 /* fly_fight_logic.cpp */; };
+		18F9E6351954741300DE8FD2 /* fly_fight_logic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18F9E6321954741300DE8FD2 /* fly_fight_logic.cpp */; };
+		18F9E63A1954769600DE8FD2 /* ScriptFunRegister.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18F9E6381954769600DE8FD2 /* ScriptFunRegister.cpp */; };
+		18F9E63B1954769600DE8FD2 /* ScriptFunRegister.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18F9E6381954769600DE8FD2 /* ScriptFunRegister.cpp */; };
 		1AF4C403178663F200122817 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF4C402178663F200122817 /* libz.dylib */; };
 		5023811817EBBCAC00990C9B /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5023810817EBBCAC00990C9B /* AppController.mm */; };
 		5023811917EBBCAC00990C9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5023810917EBBCAC00990C9B /* Default-568h@2x.png */; };
@@ -302,6 +306,10 @@
 		18EBB0561950877300B79A90 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../../data; sourceTree = "<group>"; };
 		18EBB060195088DA00B79A90 /* utils_string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils_string.cpp; sourceTree = "<group>"; };
 		18EBB061195088DA00B79A90 /* utils_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils_string.h; sourceTree = "<group>"; };
+		18F9E6321954741300DE8FD2 /* fly_fight_logic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fly_fight_logic.cpp; sourceTree = "<group>"; };
+		18F9E6331954741300DE8FD2 /* fly_fight_logic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = fly_fight_logic.hpp; sourceTree = "<group>"; };
+		18F9E6381954769600DE8FD2 /* ScriptFunRegister.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScriptFunRegister.cpp; sourceTree = "<group>"; };
+		18F9E6391954769600DE8FD2 /* ScriptFunRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptFunRegister.h; sourceTree = "<group>"; };
 		1AF4C402178663F200122817 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5023810717EBBCAC00990C9B /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		5023810817EBBCAC00990C9B /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = "<group>"; };
@@ -446,6 +454,10 @@
 		1827E3431953380700BA881F /* script_export */ = {
 			isa = PBXGroup;
 			children = (
+				18F9E6321954741300DE8FD2 /* fly_fight_logic.cpp */,
+				18F9E6331954741300DE8FD2 /* fly_fight_logic.hpp */,
+				18F9E6381954769600DE8FD2 /* ScriptFunRegister.cpp */,
+				18F9E6391954769600DE8FD2 /* ScriptFunRegister.h */,
 			);
 			path = script_export;
 			sourceTree = "<group>";
@@ -965,9 +977,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EBB063195088DA00B79A90 /* utils_string.cpp in Sources */,
+				18F9E63B1954769600DE8FD2 /* ScriptFunRegister.cpp in Sources */,
 				18EBB059195087BC00B79A90 /* ability_data_table.cpp in Sources */,
 				18EBB05A195087BC00B79A90 /* DataManager.cpp in Sources */,
 				18EBB05B195087BC00B79A90 /* csv_file_parser.cpp in Sources */,
+				18F9E6351954741300DE8FD2 /* fly_fight_logic.cpp in Sources */,
 				6D9E910F194EBB88009AFBB4 /* lua_tinker.cpp in Sources */,
 				C06E23C418CEF9740093C81A /* main.cpp in Sources */,
 				5023813317EBBCE400990C9B /* AppDelegate.cpp in Sources */,
@@ -984,9 +998,11 @@
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
+				18F9E6341954741300DE8FD2 /* fly_fight_logic.cpp in Sources */,
 				6D5EE885195032D7006A0266 /* csv_file_parser.cpp in Sources */,
 				18EBB0541950854C00B79A90 /* ability_data_table.cpp in Sources */,
 				6D9E910E194EBB88009AFBB4 /* lua_tinker.cpp in Sources */,
+				18F9E63A1954769600DE8FD2 /* ScriptFunRegister.cpp in Sources */,
 				18EBB062195088DA00B79A90 /* utils_string.cpp in Sources */,
 				6D9E9112194EBBF7009AFBB4 /* lua_tinker_manager.cpp in Sources */,
 			);

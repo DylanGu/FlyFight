@@ -32,3 +32,5 @@ FlyFight.wiki/
 flyfight_branch/frameworks/runtime-src/Classes/engine/.DS_Store
 
 *.xcuserstate
+
+*.xcbkptlist

@@ -71,6 +71,8 @@ if not status then
 end
 
 ---------------------------------------------------------
+local version = DataManager:GetInstance():getTestVersion()
+print("!!!!!!!!!!!! ... version = " .. version)
 --[[
     local a = actor.CreateActor("snowcold")
     a:show()

@@ -38,10 +38,10 @@ void RegisterAsyncLoadHandle(TableDataType** data_table, std::string table_file_
 
 ////////////////////////////////////////////////////////////////////
 
-DataManager& DataManager::GetInstance()
+DataManager* DataManager::GetInstance()
 {
     static DataManager M;
-    return M;
+    return &M;
 }
 
 DataManager::DataManager() : mAbilityDataTable_(NULL)
@@ -55,5 +55,12 @@ bool DataManager::init()
     
     return true;
 }
+
+int DataManager::getTestVersion()
+{
+    return 1001;
+}
+
+
 
 

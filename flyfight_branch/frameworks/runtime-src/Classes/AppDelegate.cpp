@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "lua_tinker_manager.h"
 #include "DataManager.h"
+#include "ScriptFunRegister.h"
 
 using namespace CocosDenshion;
 
@@ -40,18 +41,13 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto engine = LuaEngine::getInstance();
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     
-    //if (engine->executeScriptFile("src/main.lua"))
-    //{
-    //    return false;
-    //}
+    ScriptFunRegister::RegistCFun2Lua(engine->getLuaStack()->getLuaState());
+
+    DataManager::GetInstance();
     
-    char* msg = LuaTinkerManager::GetInstance().CallLuaFunc<char*>("src/util/simpleTest.lua", "PleaseCallMe", 1);
-    log(msg);
-    log("!!!!!!!!!!!!!!!!!");
-    msg = LuaTinkerManager::GetInstance().CallLuaFunc<char*>("src/util/simpleTest.lua", "PleaseCallMe", 3);
-    log(msg);
-    
-    DataManager& m = DataManager::GetInstance();
+    Scene* scene = LuaTinkerManager::GetInstance().CallLuaFunc<Scene*>("src/scene/welcome_scene.lua", "CreateWelcomeScene");
+    Director::getInstance()->runWithScene(scene);
+
     return true;
 }
 
