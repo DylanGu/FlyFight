@@ -161,11 +161,27 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\engine\csvparser\csv_file_parser.h" />
+    <ClInclude Include="..\Classes\engine\scipt\lua_tinker.h" />
+    <ClInclude Include="..\Classes\engine\scipt\lua_tinker_manager.h" />
+    <ClInclude Include="..\Classes\engine\util\utils_string.h" />
+    <ClInclude Include="..\Classes\game\data_table\ability_data_table.h" />
+    <ClInclude Include="..\Classes\game\manager\DataManager.h" />
+    <ClInclude Include="..\Classes\game\script_export\fly_fight_logic.hpp" />
+    <ClInclude Include="..\Classes\game\script_export\ScriptFunRegister.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\engine\csvparser\csv_file_parser.cpp" />
+    <ClCompile Include="..\Classes\engine\scipt\lua_tinker.cpp" />
+    <ClCompile Include="..\Classes\engine\scipt\lua_tinker_manager.cpp" />
+    <ClCompile Include="..\Classes\engine\util\utils_string.cpp" />
+    <ClCompile Include="..\Classes\game\data_table\ability_data_table.cpp" />
+    <ClCompile Include="..\Classes\game\manager\DataManager.cpp" />
+    <ClCompile Include="..\Classes\game\script_export\fly_fight_logic.cpp" />
+    <ClCompile Include="..\Classes\game\script_export\ScriptFunRegister.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
