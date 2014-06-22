@@ -107,6 +107,7 @@ def main():
         sys.exit(1)
 
     #project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+    current_path = os.path.abspath(os.path.dirname(__file__))
     project_root = cocos2d_x_root
     cocos_root = os.path.abspath(os.path.join(project_root, ''))
     cxx_generator_root = os.path.abspath(os.path.join(project_root, 'tools/bindings-generator'))
@@ -153,7 +154,8 @@ def main():
         generator_py = '%s/generator.py' % cxx_generator_root
         for key in cmd_args.keys():
             args = cmd_args[key]
-            cfg = '%s/%s' % (tolua_root, key)
+            cfg = '%s/%s' % (current_path, key)
+            print '!!!!!!!!! %s' % cfg
             print 'Generating bindings for %s...' % (key[:-4])
             command = '%s %s %s -s %s -t %s -o %s -n %s' % (python_bin, generator_py, cfg, args[0], target, output_dir, args[1])
             _run_cmd(command)

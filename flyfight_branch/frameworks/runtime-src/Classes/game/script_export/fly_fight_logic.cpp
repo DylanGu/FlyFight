@@ -1,9 +1,71 @@
 #include "fly_fight_logic.hpp"
+#include "BattleScene.h"
 #include "DataManager.h"
 #include "tolua_fix.h"
 #include "LuaBasicConversions.h"
 
 
+
+int lua__BattleScene_create(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"BattleScene",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+            return 0;
+        BattleScene* ret = BattleScene::create();
+        object_to_luaval<BattleScene>(tolua_S, "BattleScene",(BattleScene*)ret);
+        return 1;
+    }
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0);
+        if(!ok)
+            return 0;
+        BattleScene* ret = BattleScene::create(arg0);
+        object_to_luaval<BattleScene>(tolua_S, "BattleScene",(BattleScene*)ret);
+        return 1;
+    }
+    CCLOG("%s has wrong number of arguments: %d, was expecting %d\n ", "create",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua__BattleScene_create'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua__BattleScene_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (BattleScene)");
+    return 0;
+}
+
+int lua_register__BattleScene(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"BattleScene");
+    tolua_cclass(tolua_S,"BattleScene","BattleScene","BaseScene",nullptr);
+
+    tolua_beginmodule(tolua_S,"BattleScene");
+        tolua_function(tolua_S,"create", lua__BattleScene_create);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(BattleScene).name();
+    g_luaType[typeName] = "BattleScene";
+    g_typeCast["BattleScene"] = "BattleScene";
+    return 1;
+}
 
 int lua__DataManager_getTestVersion(lua_State* tolua_S)
 {
@@ -142,6 +204,7 @@ TOLUA_API int register_all_(lua_State* tolua_S)
 	tolua_module(tolua_S,nullptr,0);
 	tolua_beginmodule(tolua_S,nullptr);
 
+	lua_register__BattleScene(tolua_S);
 	lua_register__DataManager(tolua_S);
 
 	tolua_endmodule(tolua_S);

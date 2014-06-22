@@ -7,7 +7,7 @@
 //
 
 #include "DataManager.h"
-#include "ability_data_table.h"
+#include "game/data_table/ability_data_table.h"
 
 using namespace cocos2d;
 template <class TableDataType>

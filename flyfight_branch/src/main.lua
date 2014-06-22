@@ -7,6 +7,7 @@ local search_path =
     "src/util",
     "src/language",
     "src/logic",
+    "src/config",
     "res",
     "src/scene"
 }
@@ -14,7 +15,7 @@ local search_path =
 local init_module =
 {
     "utils",
-    "actor",
+    "constan_info",
     "language_loader"
 }
 
@@ -71,8 +72,8 @@ if not status then
 end
 
 ---------------------------------------------------------
-local version = DataManager:GetInstance():getTestVersion()
-print("!!!!!!!!!!!! ... version = " .. version)
+--local version = DataManager:GetInstance():getTestVersion()
+--print("!!!!!!!!!!!! ... version = " .. version)
 --[[
     local a = actor.CreateActor("snowcold")
     a:show()

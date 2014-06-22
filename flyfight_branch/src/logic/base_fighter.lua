@@ -1,25 +1,26 @@
 module(..., package.seeall )
 
 --M = M or {}
-Actor = Actor or {}
-Actor.name = "BaseActor"
-Actor.poi = { x=10, y =10 }
-Actor.__index = Actor
+M = M or {}
+M.name = "BaseFighter"
+M.poi = { x=10, y =10 }
+M.body = nil
+M.__index = M
 
-function Actor:setPosition( p )
+function M:setPosition( p )
     self.poi = p
 end
 
-function Actor:setName( name )
+function M:setName( name )
     self.name = name
 end
 
-function Actor:show()
+function M:show()
     print("!!!!! Name:" .. self.name)
     print("!!!!!P :" .. self.poi.x)
 end
 
-function Actor:new(o)
+function M:new(o)
     o = o or {}
     setmetatable(o, self)
     --self.__index = self
@@ -32,8 +33,8 @@ function showModuleName()
     print("Package Name : " .. _PACKAGE)
 end
 
-function CreateActor(name )
-    local o = Actor:new()
+function CreateBaseFighter(name )
+    local o = M:new()
     --o:setName(name）
     return o
 end

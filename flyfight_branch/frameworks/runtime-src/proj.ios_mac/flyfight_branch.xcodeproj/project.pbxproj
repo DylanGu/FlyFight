@@ -21,6 +21,22 @@
 		188AC4F71955A597005EB23C /* lua_tinker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4F21955A597005EB23C /* lua_tinker.cpp */; };
 		188AC4F81955A597005EB23C /* lua_tinker_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4F41955A597005EB23C /* lua_tinker_manager.cpp */; };
 		188AC4F91955A597005EB23C /* lua_tinker_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4F41955A597005EB23C /* lua_tinker_manager.cpp */; };
+		188AC5001955B312005EB23C /* ConstantInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4FE1955B312005EB23C /* ConstantInfo.cpp */; };
+		188AC5011955B312005EB23C /* ConstantInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4FE1955B312005EB23C /* ConstantInfo.cpp */; };
+		188AC5051955BF35005EB23C /* BaseFighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC5031955BF35005EB23C /* BaseFighter.cpp */; };
+		188AC5061955BF35005EB23C /* BaseFighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC5031955BF35005EB23C /* BaseFighter.cpp */; };
+		188AC50A1955D765005EB23C /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC5081955D765005EB23C /* BattleScene.cpp */; };
+		188AC50B1955D765005EB23C /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC5081955D765005EB23C /* BattleScene.cpp */; };
+		188AC50E1955D7CA005EB23C /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC50C1955D7CA005EB23C /* BaseScene.cpp */; };
+		188AC50F1955D7CA005EB23C /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC50C1955D7CA005EB23C /* BaseScene.cpp */; };
+		189E83AF1956D6130007C9AC /* DecorationObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 189E83AD1956D6130007C9AC /* DecorationObj.cpp */; };
+		189E83B01956D6130007C9AC /* DecorationObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 189E83AD1956D6130007C9AC /* DecorationObj.cpp */; };
+		189E83B41956D65A0007C9AC /* BattleBgLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 189E83B21956D65A0007C9AC /* BattleBgLayer.cpp */; };
+		189E83B51956D65A0007C9AC /* BattleBgLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 189E83B21956D65A0007C9AC /* BattleBgLayer.cpp */; };
+		189E83C619570D420007C9AC /* Helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 189E83C419570D420007C9AC /* Helper.cpp */; };
+		189E83C719570D420007C9AC /* Helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 189E83C419570D420007C9AC /* Helper.cpp */; };
+		189E83CC195713D40007C9AC /* RepeatScrollObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 189E83CA195713D40007C9AC /* RepeatScrollObj.cpp */; };
+		189E83CD195713D40007C9AC /* RepeatScrollObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 189E83CA195713D40007C9AC /* RepeatScrollObj.cpp */; };
 		18B4E9A0194DE9AB009812DF /* touch.sh in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E99F194DE9AB009812DF /* touch.sh */; };
 		18B4E9A1194DE9AB009812DF /* touch.sh in Resources */ = {isa = PBXBuildFile; fileRef = 18B4E99F194DE9AB009812DF /* touch.sh */; };
 		18EBB0541950854C00B79A90 /* ability_data_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EBB04F1950854C00B79A90 /* ability_data_table.cpp */; };
@@ -302,6 +318,22 @@
 		188AC4F31955A597005EB23C /* lua_tinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_tinker.h; sourceTree = "<group>"; };
 		188AC4F41955A597005EB23C /* lua_tinker_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_tinker_manager.cpp; sourceTree = "<group>"; };
 		188AC4F51955A597005EB23C /* lua_tinker_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_tinker_manager.h; sourceTree = "<group>"; };
+		188AC4FE1955B312005EB23C /* ConstantInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstantInfo.cpp; sourceTree = "<group>"; };
+		188AC4FF1955B312005EB23C /* ConstantInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantInfo.h; sourceTree = "<group>"; };
+		188AC5031955BF35005EB23C /* BaseFighter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseFighter.cpp; sourceTree = "<group>"; };
+		188AC5041955BF35005EB23C /* BaseFighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFighter.h; sourceTree = "<group>"; };
+		188AC5081955D765005EB23C /* BattleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleScene.cpp; sourceTree = "<group>"; };
+		188AC5091955D765005EB23C /* BattleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
+		188AC50C1955D7CA005EB23C /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
+		188AC50D1955D7CA005EB23C /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
+		189E83AD1956D6130007C9AC /* DecorationObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecorationObj.cpp; sourceTree = "<group>"; };
+		189E83AE1956D6130007C9AC /* DecorationObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecorationObj.h; sourceTree = "<group>"; };
+		189E83B21956D65A0007C9AC /* BattleBgLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleBgLayer.cpp; sourceTree = "<group>"; };
+		189E83B31956D65A0007C9AC /* BattleBgLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleBgLayer.h; sourceTree = "<group>"; };
+		189E83C419570D420007C9AC /* Helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Helper.cpp; sourceTree = "<group>"; };
+		189E83C519570D420007C9AC /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		189E83CA195713D40007C9AC /* RepeatScrollObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RepeatScrollObj.cpp; sourceTree = "<group>"; };
+		189E83CB195713D40007C9AC /* RepeatScrollObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepeatScrollObj.h; sourceTree = "<group>"; };
 		18B4E99F194DE9AB009812DF /* touch.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = touch.sh; path = ../../../touch.sh; sourceTree = "<group>"; };
 		18EBB04F1950854C00B79A90 /* ability_data_table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ability_data_table.cpp; sourceTree = "<group>"; };
 		18EBB0501950854C00B79A90 /* ability_data_table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ability_data_table.h; sourceTree = "<group>"; };
@@ -473,6 +505,48 @@
 			path = script;
 			sourceTree = "<group>";
 		};
+		188AC5021955BED5005EB23C /* module */ = {
+			isa = PBXGroup;
+			children = (
+				188AC5031955BF35005EB23C /* BaseFighter.cpp */,
+				188AC5041955BF35005EB23C /* BaseFighter.h */,
+			);
+			path = module;
+			sourceTree = "<group>";
+		};
+		188AC5071955D74C005EB23C /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				189E83B11956D6480007C9AC /* layer */,
+				189E83AA1956D5E50007C9AC /* ui */,
+				188AC5081955D765005EB23C /* BattleScene.cpp */,
+				188AC5091955D765005EB23C /* BattleScene.h */,
+				188AC50C1955D7CA005EB23C /* BaseScene.cpp */,
+				188AC50D1955D7CA005EB23C /* BaseScene.h */,
+			);
+			path = scene;
+			sourceTree = "<group>";
+		};
+		189E83AA1956D5E50007C9AC /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				189E83CA195713D40007C9AC /* RepeatScrollObj.cpp */,
+				189E83CB195713D40007C9AC /* RepeatScrollObj.h */,
+				189E83AD1956D6130007C9AC /* DecorationObj.cpp */,
+				189E83AE1956D6130007C9AC /* DecorationObj.h */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		189E83B11956D6480007C9AC /* layer */ = {
+			isa = PBXGroup;
+			children = (
+				189E83B21956D65A0007C9AC /* BattleBgLayer.cpp */,
+				189E83B31956D65A0007C9AC /* BattleBgLayer.h */,
+			);
+			path = layer;
+			sourceTree = "<group>";
+		};
 		18EBB04E1950854C00B79A90 /* data_table */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +561,8 @@
 			children = (
 				18EBB0521950854C00B79A90 /* DataManager.cpp */,
 				18EBB0531950854C00B79A90 /* DataManager.h */,
+				188AC4FE1955B312005EB23C /* ConstantInfo.cpp */,
+				188AC4FF1955B312005EB23C /* ConstantInfo.h */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -496,6 +572,8 @@
 			children = (
 				18EBB060195088DA00B79A90 /* utils_string.cpp */,
 				18EBB061195088DA00B79A90 /* utils_string.h */,
+				189E83C419570D420007C9AC /* Helper.cpp */,
+				189E83C519570D420007C9AC /* Helper.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -586,6 +664,8 @@
 		6D5EE88819503ADE006A0266 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				188AC5071955D74C005EB23C /* scene */,
+				188AC5021955BED5005EB23C /* module */,
 				1827E3431953380700BA881F /* script_export */,
 				18EBB04E1950854C00B79A90 /* data_table */,
 				18EBB0511950854C00B79A90 /* manager */,
@@ -617,15 +697,15 @@
 		F293B3BD15EB7BE500256477 = {
 			isa = PBXGroup;
 			children = (
+				F293BB7C15EB830F00256477 /* Classes */,
+				F293BC4615EB859D00256477 /* Resources */,
 				C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */,
 				15A8A4031834BDA200142BE0 /* cocos2d_libs.xcodeproj */,
 				5023810617EBBCAC00990C9B /* ios */,
 				5023817117EBBE3400990C9B /* mac */,
-				F293BB7C15EB830F00256477 /* Classes */,
 				F293B3CB15EB7BE500256477 /* Frameworks */,
 				1A0227A417A3AA1A00B867AD /* Lua Common */,
 				F293B3C915EB7BE500256477 /* Products */,
-				F293BC4615EB859D00256477 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -980,12 +1060,20 @@
 				18F9E63B1954769600DE8FD2 /* ScriptFunRegister.cpp in Sources */,
 				18EBB059195087BC00B79A90 /* ability_data_table.cpp in Sources */,
 				188AC4F71955A597005EB23C /* lua_tinker.cpp in Sources */,
+				189E83B51956D65A0007C9AC /* BattleBgLayer.cpp in Sources */,
+				189E83CD195713D40007C9AC /* RepeatScrollObj.cpp in Sources */,
+				188AC5061955BF35005EB23C /* BaseFighter.cpp in Sources */,
 				18EBB05A195087BC00B79A90 /* DataManager.cpp in Sources */,
 				188AC4F91955A597005EB23C /* lua_tinker_manager.cpp in Sources */,
 				18EBB05B195087BC00B79A90 /* csv_file_parser.cpp in Sources */,
+				188AC50B1955D765005EB23C /* BattleScene.cpp in Sources */,
+				189E83B01956D6130007C9AC /* DecorationObj.cpp in Sources */,
+				188AC50F1955D7CA005EB23C /* BaseScene.cpp in Sources */,
 				18F9E6351954741300DE8FD2 /* fly_fight_logic.cpp in Sources */,
 				C06E23C418CEF9740093C81A /* main.cpp in Sources */,
 				5023813317EBBCE400990C9B /* AppDelegate.cpp in Sources */,
+				188AC5011955B312005EB23C /* ConstantInfo.cpp in Sources */,
+				189E83C719570D420007C9AC /* Helper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,13 +1083,21 @@
 			files = (
 				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
 				188AC4F61955A597005EB23C /* lua_tinker.cpp in Sources */,
+				188AC5001955B312005EB23C /* ConstantInfo.cpp in Sources */,
+				189E83CC195713D40007C9AC /* RepeatScrollObj.cpp in Sources */,
 				18EBB0551950854C00B79A90 /* DataManager.cpp in Sources */,
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
+				188AC50E1955D7CA005EB23C /* BaseScene.cpp in Sources */,
+				189E83B41956D65A0007C9AC /* BattleBgLayer.cpp in Sources */,
 				18F9E6341954741300DE8FD2 /* fly_fight_logic.cpp in Sources */,
+				188AC5051955BF35005EB23C /* BaseFighter.cpp in Sources */,
 				6D5EE885195032D7006A0266 /* csv_file_parser.cpp in Sources */,
 				18EBB0541950854C00B79A90 /* ability_data_table.cpp in Sources */,
+				189E83AF1956D6130007C9AC /* DecorationObj.cpp in Sources */,
+				189E83C619570D420007C9AC /* Helper.cpp in Sources */,
+				188AC50A1955D765005EB23C /* BattleScene.cpp in Sources */,
 				18F9E63A1954769600DE8FD2 /* ScriptFunRegister.cpp in Sources */,
 				18EBB062195088DA00B79A90 /* utils_string.cpp in Sources */,
 				188AC4F81955A597005EB23C /* lua_tinker_manager.cpp in Sources */,
@@ -1099,7 +1195,7 @@
 					10000,
 				);
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/cocos/platform/mac $(SRCROOT)/../../cocos2d-x/external/glfw3/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../runtime-src/Classes $(inherited) $(SRCROOT)/../../cocos2d-x/cocos/platform/mac $(SRCROOT)/../../cocos2d-x/external/glfw3/include/mac";
 			};
 			name = Debug;
 		};
@@ -1125,7 +1221,7 @@
 					10000,
 				);
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/cocos/platform/mac $(SRCROOT)/../../cocos2d-x/external/glfw3/include/mac";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../runtime-src/Classes $(inherited) $(SRCROOT)/../../cocos2d-x/cocos/platform/mac $(SRCROOT)/../../cocos2d-x/external/glfw3/include/mac";
 			};
 			name = Release;
 		};
