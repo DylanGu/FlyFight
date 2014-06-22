@@ -3,7 +3,7 @@ module(..., package.seeall )
 
 local theme = {}
 
-theme[1] = { layer = {1, 2, 3}, dec = {4, 6, 7, 10} }
+theme[1] = { layer = {1,2,3}, dec = {4, 6, 7, 10} }
 theme[2] = { layer = {1, 2}, dec = {1, 2} }
 theme[3] = { layer = {1, 2}, dec = {1, 2} }
 theme[4] = { layer = {1, 2}, dec = {1, 2} }
@@ -14,7 +14,7 @@ theme[6] = { layer = {1, 2}, dec = {1, 2} }
 layer = {}
 layer[1] = { bg = {1, 2}, speed = 0.5 }
 layer[2] = { bg = {4, 5}, speed = 1.0 }
-layer[3] = { bg = {5, 4}, speed = 0.6 }
+layer[3] = { bg = {4, 5}, speed = 0.6 }
 layer[4] = { bg = {1, 2}, speed = 0.5 }
 layer[5] = { bg = {1, 2}, speed = 0.5 }
 layer[6] = { bg = {1, 2}, speed = 0.5 }
@@ -97,10 +97,9 @@ function _G.GetBattleBgIndexForTheme( theme_id , layer_index, pre_index)
     local layerId = theme.layer[layer_index]
     local layer = layer[layerId]
 
-    if pre_index > #layer then
+    if pre_index > #layer.bg then
         pre_index = 1
     end
-
     return pre_index
 end
 

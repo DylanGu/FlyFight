@@ -50,7 +50,6 @@ void RepeatScrollObj::initWithContainerAndPoi(cocos2d::ParallaxNode *container, 
     mNextSpriteY = mBgSprite1->getContentSize().height;
     
     mBgSprite2 = Sprite::create(getNextBgPath());
-    mBgSprite2->setFlippedY(true);
     mBgSprite2->retain();
     mBgSprite2->setAnchorPoint(Point::ZERO);
     mContainer->addChild(mBgSprite2, -10, Vec2(1, mSpeedRadio), Vec2(0, mNextSpriteY));
