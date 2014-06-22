@@ -47,12 +47,14 @@ void RepeatScrollObj::initWithContainerAndPoi(cocos2d::ParallaxNode *container, 
     mBgSprite1->retain();
     mBgSprite1->setAnchorPoint(Point::ZERO);
     mContainer->addChild(mBgSprite1, -10, Vec2(1, mSpeedRadio), Vec2(0, mNextSpriteY));
+    mBgSprite1->setLocalZOrder(mLayerIndex);
     mNextSpriteY = mBgSprite1->getContentSize().height;
     
     mBgSprite2 = Sprite::create(getNextBgPath());
     mBgSprite2->retain();
     mBgSprite2->setAnchorPoint(Point::ZERO);
     mContainer->addChild(mBgSprite2, -10, Vec2(1, mSpeedRadio), Vec2(0, mNextSpriteY));
+    mBgSprite2->setLocalZOrder(mLayerIndex);
     mNextSpriteY += mBgSprite2->getContentSize().height;
     
     mNextSwapY = mBgSprite1->getContentSize().height + mBgSprite1->getPositionY();
@@ -71,8 +73,9 @@ bool RepeatScrollObj::updatePosition(float parentY)
         mBgSprite1->setTexture(getNextBgPath());
         mBgSprite1->setAnchorPoint(Point::ZERO);
 
-        mBgSprite1->setPosition(Point::ZERO);
+        //mBgSprite1->setPosition(Point::ZERO);
         mContainer->addChild(mBgSprite1, -10, Vec2(1, mSpeedRadio), Vec2(0, mNextSpriteY));
+        mBgSprite1->setLocalZOrder(mLayerIndex);
         mNextSpriteY += mBgSprite1->getContentSize().height;
 
         Sprite* temp = mBgSprite1;
