@@ -14,14 +14,16 @@
 
 class AbilityDataTable;
 
-class DataManager
+class DataManager : public cocos2d::Ref
 {
     
 public:
     
-    static DataManager& GetInstance();
+    static DataManager* GetInstance();
     
     DataManager();
+    
+    int getTestVersion();
     
 protected:
     

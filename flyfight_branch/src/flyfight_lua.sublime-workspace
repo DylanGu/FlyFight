@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"la",
+				"layer"
+			],
+			[
+				"lay",
+				"layer_id"
+			],
+			[
+				"layer",
+				"layerId"
+			],
+			[
+				"theme",
+				"theme_id"
+			],
+			[
+				"fun",
+				"function	function"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"p",
+				"pre_index"
+			],
+			[
+				"the",
+				"theme"
+			],
+			[
 				"pr",
 				"print"
 			],
@@ -15,6 +47,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "config/battle_res_control.lua",
+			"settings":
+			{
+				"buffer_size": 3588,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -72,6 +112,8 @@
 	},
 	"file_history":
 	[
+		"/Users/apple/develop/workplace/cocos2d-x-3.1/projects/FlyFight/flyfight_branch/src/main.lua",
+		"/Users/apple/develop/workplace/cocos2d-x-3.1/projects/FlyFight/flyfight_branch/src/design.lua",
 		"/Users/apple/develop/workplace/cocos2d-x-3.1/README.md",
 		"/Users/apple/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/apple/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
@@ -88,7 +130,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -102,6 +144,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Map"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -119,8 +162,141 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "config/battle_res_control.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

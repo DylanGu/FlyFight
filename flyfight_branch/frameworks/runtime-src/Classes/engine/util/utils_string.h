@@ -32,5 +32,4 @@ static float String2Float(std::string& msg)
     return atof(msg.c_str());
 }
 
-
 #endif /* defined(__flyfight_branch__utils_string__) */

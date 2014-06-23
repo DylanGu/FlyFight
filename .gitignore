@@ -32,3 +32,17 @@ FlyFight.wiki/
 flyfight_branch/frameworks/runtime-src/Classes/engine/.DS_Store
 
 *.xcuserstate
+
+*.xcbkptlist
+flyfight_branch/frameworks/runtime-src/proj.win32/flyfight_branch.vcxproj.filters
+*.tlog
+*.filters
+*.lastbuildstate
+*.log
+*.unsuccessfulbuild
+*.cache
+*.idb
+*.pdb
+*.opensdf
+*.sdf
+*.suo

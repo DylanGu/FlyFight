@@ -2,8 +2,10 @@
 #include "CCLuaEngine.h"
 #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
-#include "lua_tinker_manager.h"
-#include "DataManager.h"
+#include "engine/script/lua_tinker_manager.h"
+#include "game/manager/DataManager.h"
+#include "game/script_export/ScriptFunRegister.h"
+#include "game/manager/ConstantInfo.h"
 
 using namespace CocosDenshion;
 
@@ -25,11 +27,13 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto director = Director::getInstance();
 	auto glview = director->getOpenGLView();
 	if(!glview) {
-		glview = GLView::createWithRect("flyfight_branch", Rect(0,0,900,640));
+		glview = GLView::createWithRect("flyfight_branch", Rect(0,0,512,768));
 		director->setOpenGLView(glview);
 	}
 
-    glview->setDesignResolutionSize(480, 320, ResolutionPolicy::NO_BORDER);
+    ConstantInfo::INIT();
+
+    glview->setDesignResolutionSize(ConstantInfo::_DesignResolutionSize.width, ConstantInfo::_DesignResolutionSize.height, ConstantInfo::_DesignResolutionPolicy);
 
     // turn on display FPS
     director->setDisplayStats(true);
@@ -40,18 +44,13 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto engine = LuaEngine::getInstance();
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     
-    //if (engine->executeScriptFile("src/main.lua"))
-    //{
-    //    return false;
-    //}
+    ScriptFunRegister::RegistCFun2Lua(engine->getLuaStack()->getLuaState());
+
+    DataManager::GetInstance();
     
-    char* msg = LuaTinkerManager::GetInstance().CallLuaFunc<char*>("src/util/simpleTest.lua", "PleaseCallMe", 1);
-    log(msg);
-    log("!!!!!!!!!!!!!!!!!");
-    msg = LuaTinkerManager::GetInstance().CallLuaFunc<char*>("src/util/simpleTest.lua", "PleaseCallMe", 3);
-    log(msg);
-    
-    DataManager& m = DataManager::GetInstance();
+    Scene* scene = LuaTinkerManager::GetInstance().CallLuaFunc<Scene*>("src/scene/battle_scene.lua", "CreateBattleScene");
+    Director::getInstance()->runWithScene(scene);
+
     return true;
 }
 
