@@ -3,7 +3,7 @@ module(..., package.seeall )
 
 local theme = {}
 
-theme[1] = { layer = {1,2,3}, dec = {4, 6, 7, 10} }
+theme[1] = { layer = {1}, dec = {4, 6, 7, 10} }
 theme[2] = { layer = {1, 2}, dec = {1, 2} }
 theme[3] = { layer = {1, 2}, dec = {1, 2} }
 theme[4] = { layer = {1, 2}, dec = {1, 2} }
@@ -12,7 +12,7 @@ theme[6] = { layer = {1, 2}, dec = {1, 2} }
 
 ------------------------------------------------
 layer = {}
-layer[1] = { bg = {1, 2}, speed = 0.5 }
+layer[1] = { bg = {1, 2, 3, 4, 5, 6,7, 8,9, 10, 11, 12, 13, 14}, speed = 0.5 }
 layer[2] = { bg = {4, 5}, speed = 1.0 }
 layer[3] = { bg = {4, 5}, speed = 0.6 }
 layer[4] = { bg = {1, 2}, speed = 0.5 }
@@ -27,17 +27,20 @@ layer[10] = { bg = {1, 2}, speed = 0.5 }
 
 bg = 
 {
-    "res/battle_bg/bg_1.jpg",
-    "res/battle_bg/bg_2.jpg",
-    "res/battle_bg/bg_3.jpg",
+    "res/battle_bg/bg_1.png",
+    "res/battle_bg/bg_2.png",
+    "res/battle_bg/bg_3.png",
     "res/battle_bg/bg_4.png",
     "res/battle_bg/bg_5.png",
-    "res/battle_bg/bg_6.jpg",
-    "res/battle_bg/bg_7.jpg",
-    "res/battle_bg/bg_8.jpg",
-    "res/battle_bg/bg_9.jpg",
-    "res/battle_bg/bg_10.jpg",
-    "res/battle_bg/bg_11.jpg",
+    "res/battle_bg/bg_6.png",
+    "res/battle_bg/bg_7.png",
+    "res/battle_bg/bg_8.png",
+    "res/battle_bg/bg_9.png",
+    "res/battle_bg/bg_10.png",
+    "res/battle_bg/bg_11.png",
+    "res/battle_bg/bg_12.png",
+    "res/battle_bg/bg_13.png",
+    "res/battle_bg/bg_14.png"
 }
 
 ------------------------------------------------

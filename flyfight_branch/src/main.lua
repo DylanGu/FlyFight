@@ -9,14 +9,16 @@ local search_path =
     "src/logic",
     "src/config",
     "res",
-    "src/scene"
+    "src/scene",
+    "src/data"
 }
 
 local init_module =
 {
     "utils",
     "constan_info",
-    "language_loader"
+    "language_loader",
+    "data_test"
 }
 
 function cclog( ... )

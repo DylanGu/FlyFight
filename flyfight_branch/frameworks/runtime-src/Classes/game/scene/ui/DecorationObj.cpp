@@ -50,6 +50,7 @@ void DecorationObj::initWithContainerAndPoi(cocos2d::ParallaxNode *container, co
     
     mSpeedRadio = CCRANDOM_0_1() + 1;
     container->addChild(mRenderNode, 1, Vec2(1, mSpeedRadio), Vec2(x, y));
+    mRenderNode->setLocalZOrder(100);
     mRenderNode->setPosition(x, y);
     mTopY = (mRenderNode->getContentSize().height * 0.5f + y) / mSpeedRadio;
 }

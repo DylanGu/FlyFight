@@ -10,6 +10,9 @@
 #include "engine/script/lua_tinker_manager.h"
 #include "game/scene/layer/BattleBgLayer.h"
 
+//test include
+#include "game/data_table/pb/BaseAttr.pb.h"
+
 USING_NS_CC;
 using namespace std;
 using namespace std::placeholders;
@@ -57,6 +60,9 @@ bool BattleScene::init()
     listener->setSwallowTouches(false);
     
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
+    
+    //---test---
+    const BaseAttr* attr = new BaseAttr();
     
     mFighter = Sprite::create("res/module/fighter/f_1001.png");
     mFighter->retain();
