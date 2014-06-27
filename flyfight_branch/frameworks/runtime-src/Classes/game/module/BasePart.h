@@ -12,17 +12,17 @@
 #include "cocos2d.h"
 
 //1.mID, 2.sID
-class BaseFighter : public cocos2d::Ref
+class BasePart : public cocos2d::Ref
 {
     
 public:
     
-    static BaseFighter* create(int id_);
+    static BasePart* create(int id_);
     
     bool init(int id_);
     
-    BaseFighter();
-    ~BaseFighter();
+    BasePart();
+    ~BasePart();
     
     virtual void addModule(int id_);
     

@@ -6,13 +6,13 @@
 //
 //
 
-#include "BaseFighter.h"
+#include "BasePart.h"
 
 using namespace cocos2d;
 
-BaseFighter* BaseFighter::create(int id_)
+BasePart* BasePart::create(int id_)
 {
-    BaseFighter* pRet = new BaseFighter();
+    BasePart* pRet = new BasePart();
     if (pRet && pRet->init(id_))
     {
         pRet->autorelease();
@@ -23,25 +23,25 @@ BaseFighter* BaseFighter::create(int id_)
     return NULL;
 }
 
-BaseFighter::BaseFighter() : mRenderNode(NULL)
+BasePart::BasePart() : mRenderNode(NULL)
 {
     
 }
 
-BaseFighter::~BaseFighter()
+BasePart::~BasePart()
 {
     CC_SAFE_RELEASE(mRenderNode);
     mRenderNode = NULL;
 }
 
-bool BaseFighter::init(int id_)
+bool BasePart::init(int id_)
 {
     mID = id_;
     return true;
 }
 
 
-void BaseFighter::addModule(int id_)
+void BasePart::addModule(int id_)
 {
     
 }
