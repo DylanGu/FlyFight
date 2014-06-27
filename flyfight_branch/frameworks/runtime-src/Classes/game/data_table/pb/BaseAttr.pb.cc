@@ -24,6 +24,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::EnumDescriptor* BaseAttr_ePart_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* BaseAttr_eQuality_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* BaseAttr_eQualityRank_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* eTest_descriptor_ = NULL;
 
 }  // namespace
 
@@ -59,6 +60,7 @@ void protobuf_AssignDesc_BaseAttr_2eproto() {
   BaseAttr_ePart_descriptor_ = BaseAttr_descriptor_->enum_type(0);
   BaseAttr_eQuality_descriptor_ = BaseAttr_descriptor_->enum_type(1);
   BaseAttr_eQualityRank_descriptor_ = BaseAttr_descriptor_->enum_type(2);
+  eTest_descriptor_ = file->enum_type(0);
 }
 
 namespace {
@@ -103,7 +105,8 @@ void protobuf_AddDesc_BaseAttr_2eproto() {
     "_Blue\020\003\022\023\n\017kQuality_Purple\020\004\022\023\n\017kQuality"
     "_Orange\020\005\"c\n\014eQualityRank\022\016\n\nkQuaRank_0\020"
     "\000\022\016\n\nkQuaRank_1\020\001\022\016\n\nkQuaRank_2\020\002\022\020\n\014kQu"
-    "aRank_Max\020\003\022\021\n\rkQuaRank_Gold\020\004", 590);
+    "aRank_Max\020\003\022\021\n\rkQuaRank_Gold\020\004*\021\n\005eTest\022"
+    "\010\n\004kT_1\020\000", 609);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "BaseAttr.proto", &protobuf_RegisterTypes);
   BaseAttr::default_instance_ = new BaseAttr();
@@ -117,6 +120,19 @@ struct StaticDescriptorInitializer_BaseAttr_2eproto {
     protobuf_AddDesc_BaseAttr_2eproto();
   }
 } static_descriptor_initializer_BaseAttr_2eproto_;
+const ::google::protobuf::EnumDescriptor* eTest_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return eTest_descriptor_;
+}
+bool eTest_IsValid(int value) {
+  switch(value) {
+    case 0:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 

@@ -62,12 +62,18 @@ bool BattleScene::init()
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
     
     //---test---
+    /*
     const BaseAttr* attr = new BaseAttr();
+    eTest t = eTest::kT_1;
     
     mFighter = Sprite::create("res/module/fighter/f_1001.png");
     mFighter->retain();
     addChild(mFighter);
     mFighter->setPosition(320, 120);
+    */
+    const BaseAttr* attr = new BaseAttr();
+    eTest t = eTest::kT_1;
+    
     return true;
 }
 

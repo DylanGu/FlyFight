@@ -1,5 +1,10 @@
 //package ;
 
+  enum eTest
+  {
+    kT_1 = 0;
+  }
+
 message BaseAttr
 {
 

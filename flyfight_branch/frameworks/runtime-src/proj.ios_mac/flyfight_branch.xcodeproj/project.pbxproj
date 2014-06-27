@@ -23,8 +23,6 @@
 		188AC4F91955A597005EB23C /* lua_tinker_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4F41955A597005EB23C /* lua_tinker_manager.cpp */; };
 		188AC5001955B312005EB23C /* ConstantInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4FE1955B312005EB23C /* ConstantInfo.cpp */; };
 		188AC5011955B312005EB23C /* ConstantInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC4FE1955B312005EB23C /* ConstantInfo.cpp */; };
-		188AC5051955BF35005EB23C /* BaseFighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC5031955BF35005EB23C /* BaseFighter.cpp */; };
-		188AC5061955BF35005EB23C /* BaseFighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC5031955BF35005EB23C /* BaseFighter.cpp */; };
 		188AC50A1955D765005EB23C /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC5081955D765005EB23C /* BattleScene.cpp */; };
 		188AC50B1955D765005EB23C /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC5081955D765005EB23C /* BattleScene.cpp */; };
 		188AC50E1955D7CA005EB23C /* BaseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 188AC50C1955D7CA005EB23C /* BaseScene.cpp */; };
@@ -152,6 +150,10 @@
 		50D7C96E17EBBEE6005D0B91 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96D17EBBEE6005D0B91 /* AppKit.framework */; };
 		50D7C97017EBBEEC005D0B91 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D7C96F17EBBEEC005D0B91 /* IOKit.framework */; };
 		6D5EE885195032D7006A0266 /* csv_file_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D5EE883195032D7006A0266 /* csv_file_parser.cpp */; };
+		6DF5071F195C251300B8B965 /* BasePart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DF5071D195C251300B8B965 /* BasePart.cpp */; };
+		6DF50720195C251300B8B965 /* BasePart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DF5071D195C251300B8B965 /* BasePart.cpp */; };
+		6DF50723195C264E00B8B965 /* IDManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DF50721195C264E00B8B965 /* IDManager.cpp */; };
+		6DF50724195C264E00B8B965 /* IDManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DF50721195C264E00B8B965 /* IDManager.cpp */; };
 		C03781B918BF655400FE4F13 /* res in Resources */ = {isa = PBXBuildFile; fileRef = C03781B718BF655400FE4F13 /* res */; };
 		C03781BA18BF655400FE4F13 /* res in Resources */ = {isa = PBXBuildFile; fileRef = C03781B718BF655400FE4F13 /* res */; };
 		C03781BB18BF655400FE4F13 /* src in Resources */ = {isa = PBXBuildFile; fileRef = C03781B818BF655400FE4F13 /* src */; };
@@ -386,8 +388,6 @@
 		188AC4F51955A597005EB23C /* lua_tinker_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_tinker_manager.h; sourceTree = "<group>"; };
 		188AC4FE1955B312005EB23C /* ConstantInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConstantInfo.cpp; sourceTree = "<group>"; };
 		188AC4FF1955B312005EB23C /* ConstantInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantInfo.h; sourceTree = "<group>"; };
-		188AC5031955BF35005EB23C /* BaseFighter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseFighter.cpp; sourceTree = "<group>"; };
-		188AC5041955BF35005EB23C /* BaseFighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFighter.h; sourceTree = "<group>"; };
 		188AC5081955D765005EB23C /* BattleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleScene.cpp; sourceTree = "<group>"; };
 		188AC5091955D765005EB23C /* BattleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
 		188AC50C1955D7CA005EB23C /* BaseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseScene.cpp; sourceTree = "<group>"; };
@@ -527,6 +527,10 @@
 		50D7C96F17EBBEEC005D0B91 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		6D5EE883195032D7006A0266 /* csv_file_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = csv_file_parser.cpp; sourceTree = "<group>"; };
 		6D5EE884195032D7006A0266 /* csv_file_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = csv_file_parser.h; sourceTree = "<group>"; };
+		6DF5071D195C251300B8B965 /* BasePart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasePart.cpp; sourceTree = "<group>"; };
+		6DF5071E195C251300B8B965 /* BasePart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePart.h; sourceTree = "<group>"; };
+		6DF50721195C264E00B8B965 /* IDManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IDManager.cpp; sourceTree = "<group>"; };
+		6DF50722195C264E00B8B965 /* IDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDManager.h; sourceTree = "<group>"; };
 		C03781AE18BF654500FE4F13 /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "../../cocos2d-x/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
 		C03781B718BF655400FE4F13 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../res; sourceTree = "<group>"; };
 		C03781B818BF655400FE4F13 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../src; sourceTree = "<group>"; };
@@ -654,8 +658,8 @@
 		188AC5021955BED5005EB23C /* module */ = {
 			isa = PBXGroup;
 			children = (
-				188AC5031955BF35005EB23C /* BaseFighter.cpp */,
-				188AC5041955BF35005EB23C /* BaseFighter.h */,
+				6DF5071D195C251300B8B965 /* BasePart.cpp */,
+				6DF5071E195C251300B8B965 /* BasePart.h */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -853,6 +857,8 @@
 				18EBB0531950854C00B79A90 /* DataManager.h */,
 				188AC4FE1955B312005EB23C /* ConstantInfo.cpp */,
 				188AC4FF1955B312005EB23C /* ConstantInfo.h */,
+				6DF50721195C264E00B8B965 /* IDManager.cpp */,
+				6DF50722195C264E00B8B965 /* IDManager.h */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -1376,8 +1382,8 @@
 				18A3031E1958761C005AD36F /* printer.cc in Sources */,
 				18A303181958761C005AD36F /* generated_message_util.cc in Sources */,
 				18A3033E1958761C005AD36F /* strutil.cc in Sources */,
-				188AC5061955BF35005EB23C /* BaseFighter.cpp in Sources */,
 				18EBB05A195087BC00B79A90 /* DataManager.cpp in Sources */,
+				6DF50724195C264E00B8B965 /* IDManager.cpp in Sources */,
 				18A3032A1958761C005AD36F /* message_lite.cc in Sources */,
 				188AC4F91955A597005EB23C /* lua_tinker_manager.cpp in Sources */,
 				18EBB05B195087BC00B79A90 /* csv_file_parser.cpp in Sources */,
@@ -1385,6 +1391,7 @@
 				18A303121958761C005AD36F /* extension_set.cc in Sources */,
 				188AC50B1955D765005EB23C /* BattleScene.cpp in Sources */,
 				189E83B01956D6130007C9AC /* DecorationObj.cpp in Sources */,
+				6DF50720195C251300B8B965 /* BasePart.cpp in Sources */,
 				18A3033A1958761C005AD36F /* stringprintf.cc in Sources */,
 				188AC50F1955D7CA005EB23C /* BaseScene.cpp in Sources */,
 				18F9E6351954741300DE8FD2 /* fly_fight_logic.cpp in Sources */,
@@ -1426,6 +1433,7 @@
 				18A3031D1958761C005AD36F /* printer.cc in Sources */,
 				18A303451958761C005AD36F /* wire_format.cc in Sources */,
 				18A303151958761C005AD36F /* generated_message_reflection.cc in Sources */,
+				6DF5071F195C251300B8B965 /* BasePart.cpp in Sources */,
 				18A3030B1958761C005AD36F /* descriptor.pb.cc in Sources */,
 				18A303371958761C005AD36F /* once.cc in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
@@ -1435,7 +1443,6 @@
 				18A303211958761C005AD36F /* zero_copy_stream.cc in Sources */,
 				18F9E6341954741300DE8FD2 /* fly_fight_logic.cpp in Sources */,
 				18A303171958761C005AD36F /* generated_message_util.cc in Sources */,
-				188AC5051955BF35005EB23C /* BaseFighter.cpp in Sources */,
 				18A3032F1958761C005AD36F /* service.cc in Sources */,
 				6D5EE885195032D7006A0266 /* csv_file_parser.cpp in Sources */,
 				18A303251958761C005AD36F /* zero_copy_stream_impl_lite.cc in Sources */,
@@ -1451,6 +1458,7 @@
 				18A3031F1958761C005AD36F /* tokenizer.cc in Sources */,
 				18A3034E1958764C005AD36F /* BaseAttr.pb.cc in Sources */,
 				18F9E63A1954769600DE8FD2 /* ScriptFunRegister.cpp in Sources */,
+				6DF50723195C264E00B8B965 /* IDManager.cpp in Sources */,
 				18EBB062195088DA00B79A90 /* utils_string.cpp in Sources */,
 				188AC4F81955A597005EB23C /* lua_tinker_manager.cpp in Sources */,
 				18A303191958761C005AD36F /* coded_stream.cc in Sources */,

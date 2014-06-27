@@ -101,6 +101,24 @@ inline bool BaseAttr_eQualityRank_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<BaseAttr_eQualityRank>(
     BaseAttr_eQualityRank_descriptor(), name, value);
 }
+enum eTest {
+  kT_1 = 0
+};
+bool eTest_IsValid(int value);
+const eTest eTest_MIN = kT_1;
+const eTest eTest_MAX = kT_1;
+const int eTest_ARRAYSIZE = eTest_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* eTest_descriptor();
+inline const ::std::string& eTest_Name(eTest value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    eTest_descriptor(), value);
+}
+inline bool eTest_Parse(
+    const ::std::string& name, eTest* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<eTest>(
+    eTest_descriptor(), name, value);
+}
 // ===================================================================
 
 class BaseAttr : public ::google::protobuf::Message {
@@ -539,6 +557,10 @@ inline const EnumDescriptor* GetEnumDescriptor< ::BaseAttr_eQuality>() {
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::BaseAttr_eQualityRank>() {
   return ::BaseAttr_eQualityRank_descriptor();
+}
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::eTest>() {
+  return ::eTest_descriptor();
 }
 
 }  // namespace google
