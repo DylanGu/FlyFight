@@ -1,0 +1,10 @@
+//package ;
+import "BaseAttrProto.proto";
+
+message UserInfoRecordProto
+{
+    required int32 userID = 1[default = 0];
+    required string userName = 2[default = "T"];
+    required int32 currentFighterID = 3[default= 0];
+    repeated BaseAttrProto unitAttr = 4;
+}

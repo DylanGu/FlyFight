@@ -18,7 +18,6 @@ local init_module =
     "utils",
     "constan_info",
     "language_loader",
-    "data_test"
 }
 
 function cclog( ... )

@@ -14,6 +14,7 @@
 static std::string BATTLE_SCENE_NAME    =   "battle_scene";
 
 class BattleBgLayer;
+class BaseFighter;
 
 class BattleScene : public BaseScene
 {
@@ -26,6 +27,8 @@ protected:
     
     bool    init();
     
+    bool    initSelfFighter();
+    
     BattleScene(std::string& name);
     
     ~BattleScene();
@@ -37,10 +40,12 @@ protected:
     
 private:
     
-    cocos2d::Point  mPreTouchPoi;
+    cocos2d::Point      mPreTouchPoi;
     
-    cocos2d::Sprite*    mFighter;
-    BattleBgLayer*  mBgLayer;
+private:
+    
+    BaseFighter*        mOwnFighter;//我方战机
+    BattleBgLayer*      mBgLayer;
 };
 
 

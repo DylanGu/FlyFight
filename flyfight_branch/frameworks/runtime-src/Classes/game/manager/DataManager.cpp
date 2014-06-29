@@ -7,9 +7,16 @@
 //
 
 #include "DataManager.h"
+
 #include "game/data_table/ability_data_table.h"
+#include "game/event/GameEventConstant.h"
+#include "engine/script/lua_tinker_manager.h"
 
 using namespace cocos2d;
+
+static const char* KEY_CURRENT_USER_ID = "k_cur_user_id";
+
+
 template <class TableDataType>
 void LoadSingleTable(TableDataType** data_table, std::string table_file_name)
 {
@@ -40,27 +47,73 @@ void RegisterAsyncLoadHandle(TableDataType** data_table, std::string table_file_
 
 DataManager* DataManager::GetInstance()
 {
-    static DataManager M;
-    return &M;
+    static DataManager* M = NULL;
+    if (!M)
+    {
+        M = new DataManager();
+        M->init();
+    }
+    return M;
 }
 
 DataManager::DataManager() : mAbilityDataTable_(NULL)
+    , mCurrentUserInfo(NULL)
+    , mCurrentUserID(-1)
 {
-    init();
+}
+
+DataManager::~DataManager()
+{
+    CC_SAFE_RELEASE(mCurrentUserInfo);
+    mCurrentUserInfo = NULL;
 }
 
 bool DataManager::init()
 {
     RegisterAsyncLoadHandle<AbilityDataTable>(&mAbilityDataTable_, "test.csv");
     
+    //------------------------------------------------------------------------
+    LuaTinkerManager::GetInstance().CallLuaFunc<bool>("src/data/data_loader.lua", "InitDataTable");
+    
+    log("DataManager Begin init UserInfo");
+    mCurrentUserID = UserDefault::getInstance()->getIntegerForKey(KEY_CURRENT_USER_ID, 502);
+    mCurrentUserInfo = UserInfo::create();
+    mCurrentUserInfo->retain();
+    mCurrentUserInfo->initUserInfoFromProtobuf(mCurrentUserID);
     return true;
 }
 
-int DataManager::getTestVersion()
+void DataManager::changerUser(int userID)
 {
-    return 1001;
+    CC_SAFE_RELEASE(mCurrentUserInfo);
+    mCurrentUserInfo = NULL;
+    
+    mCurrentUserID = userID;
+    mCurrentUserInfo = UserInfo::create();
+    mCurrentUserInfo->initUserInfoFromProtobuf(mCurrentUserID);
+    mCurrentUserInfo->retain();
+    
+    UserDefault::getInstance()->setIntegerForKey(KEY_CURRENT_USER_ID, mCurrentUserID);
+    UserDefault::getInstance()->flush();
+    
+    //send change userinfo event
+    Director::getInstance()->getEventDispatcher()->dispatchCustomEvent(A_EVENT_USER_CHANGE);
 }
 
 
+BaseData* DataManager::getBaseData(int eID)
+{
+    DataMap::iterator it = mDataMap.find(eID);
+    if (it == mDataMap.end())
+    {
+        log("IDManager ERROR [BaseData Not find id=%d]", eID);
+        return NULL;
+    }
+    
+    return it->second;
+}
 
-
+void DataManager::registerBaseData(BaseData *data)
+{
+    mDataMap.insert(std::make_pair(data->getEID(), data));
+}
