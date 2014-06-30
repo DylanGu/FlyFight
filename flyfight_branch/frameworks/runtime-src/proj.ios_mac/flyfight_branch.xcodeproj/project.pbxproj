@@ -25,8 +25,6 @@
 		18518D67195FF3ED0066BE4E /* UserInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18518D64195FF3ED0066BE4E /* UserInfo.cpp */; };
 		18518D73196008620066BE4E /* UnitFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18518D71196008620066BE4E /* UnitFactory.cpp */; };
 		18518D74196008620066BE4E /* UnitFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18518D71196008620066BE4E /* UnitFactory.cpp */; };
-		18518D8319603DAF0066BE4E /* BaseAttrProto.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18518D7F19603DAF0066BE4E /* BaseAttrProto.pb.cc */; };
-		18518D8419603DAF0066BE4E /* BaseAttrProto.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18518D7F19603DAF0066BE4E /* BaseAttrProto.pb.cc */; };
 		18518D8519603DAF0066BE4E /* UserInfoRecordProto.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18518D8119603DAF0066BE4E /* UserInfoRecordProto.pb.cc */; };
 		18518D8619603DAF0066BE4E /* UserInfoRecordProto.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18518D8119603DAF0066BE4E /* UserInfoRecordProto.pb.cc */; };
 		1886F13E195F0FE400E88360 /* BaseUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1886F13C195F0FE400E88360 /* BaseUnit.cpp */; };
@@ -403,8 +401,6 @@
 		18518D71196008620066BE4E /* UnitFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnitFactory.cpp; sourceTree = "<group>"; };
 		18518D72196008620066BE4E /* UnitFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitFactory.h; sourceTree = "<group>"; };
 		18518D7719601EDD0066BE4E /* GameEventConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameEventConstant.h; path = event/GameEventConstant.h; sourceTree = "<group>"; };
-		18518D7F19603DAF0066BE4E /* BaseAttrProto.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseAttrProto.pb.cc; sourceTree = "<group>"; };
-		18518D8019603DAF0066BE4E /* BaseAttrProto.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAttrProto.pb.h; sourceTree = "<group>"; };
 		18518D8119603DAF0066BE4E /* UserInfoRecordProto.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserInfoRecordProto.pb.cc; sourceTree = "<group>"; };
 		18518D8219603DAF0066BE4E /* UserInfoRecordProto.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoRecordProto.pb.h; sourceTree = "<group>"; };
 		18518D8819604FE60066BE4E /* LuaExportHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaExportHeader.h; sourceTree = "<group>"; };
@@ -873,8 +869,6 @@
 		18A3034B1958764C005AD36F /* pb */ = {
 			isa = PBXGroup;
 			children = (
-				18518D7F19603DAF0066BE4E /* BaseAttrProto.pb.cc */,
-				18518D8019603DAF0066BE4E /* BaseAttrProto.pb.h */,
 				18518D8119603DAF0066BE4E /* UserInfoRecordProto.pb.cc */,
 				18518D8219603DAF0066BE4E /* UserInfoRecordProto.pb.h */,
 			);
@@ -1456,7 +1450,6 @@
 				18A303301958761C005AD36F /* service.cc in Sources */,
 				18A3031A1958761C005AD36F /* coded_stream.cc in Sources */,
 				18A303341958761C005AD36F /* atomicops_internals_x86_msvc.cc in Sources */,
-				18518D8419603DAF0066BE4E /* BaseAttrProto.pb.cc in Sources */,
 				189E83C719570D420007C9AC /* Helper.cpp in Sources */,
 				18A303481958761C005AD36F /* wire_format_lite.cc in Sources */,
 			);
@@ -1495,7 +1488,6 @@
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,
 				18518D8519603DAF0066BE4E /* UserInfoRecordProto.pb.cc in Sources */,
 				18A303131958761C005AD36F /* extension_set_heavy.cc in Sources */,
-				18518D8319603DAF0066BE4E /* BaseAttrProto.pb.cc in Sources */,
 				188AC50E1955D7CA005EB23C /* BaseScene.cpp in Sources */,
 				189E83B41956D65A0007C9AC /* BattleBgLayer.cpp in Sources */,
 				18A303211958761C005AD36F /* zero_copy_stream.cc in Sources */,
@@ -1717,7 +1709,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/cocos/platform/ios";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/cocos/platform/ios $(SRCROOT)/../../runtime-src/Classes/common/protobuf/src $(SRCROOT)/../../runtime-src/Classes";
 			};
 			name = Debug;
 		};
@@ -1739,7 +1731,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/cocos/platform/ios";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../cocos2d-x/cocos/platform/ios $(SRCROOT)/../../runtime-src/Classes/common/protobuf/src $(SRCROOT)/../../runtime-src/Classes";
 			};
 			name = Release;
 		};

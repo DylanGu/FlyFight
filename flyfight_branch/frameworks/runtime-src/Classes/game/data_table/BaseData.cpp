@@ -8,7 +8,7 @@
 
 #include "BaseData.h"
 
-#include "game/data_table/pb/BaseAttrProto.pb.h"
+#include "game/data_table/pb/UserInfoRecordProto.pb.h"
 
 BaseData* BaseData::create()
 {

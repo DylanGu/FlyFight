@@ -76,7 +76,7 @@ bool DataManager::init()
     LuaTinkerManager::GetInstance().CallLuaFunc<bool>("src/data/data_loader.lua", "InitDataTable");
     
     log("DataManager Begin init UserInfo");
-    mCurrentUserID = UserDefault::getInstance()->getIntegerForKey(KEY_CURRENT_USER_ID, 502);
+    mCurrentUserID = UserDefault::getInstance()->getIntegerForKey(KEY_CURRENT_USER_ID, 512);
     mCurrentUserInfo = UserInfo::create();
     mCurrentUserInfo->retain();
     mCurrentUserInfo->initUserInfoFromProtobuf(mCurrentUserID);

@@ -29,7 +29,7 @@ UserInfo* UserInfo::create()
 
 UserInfo::UserInfo() : mCurrentFighterSID(0), mUserID(-1)
 {
-    
+    mUserName = "snowcold";
 }
 
 UserInfo::~UserInfo()
@@ -96,8 +96,9 @@ bool UserInfo::saveUserInfoToClien()
     if (fp)
     {
         UserInfoRecordProto* record = static_cast<UserInfoRecordProto*>(generateUserInfoRecordProto());
-        std::string msg;
-        record->SerializeToString(&msg);
+        //std::string msg;
+        //record->SerializeToString(&msg);
+        std::string msg = record->SerializeAsString();
         size_t ret = fwrite(msg.c_str(), 1, msg.size(), fp);
         CCASSERT(ret != 0, "fwrite function returned zero value");
         fclose(fp);
@@ -116,6 +117,7 @@ bool UserInfo::saveUserInfoToClien()
 
 void* UserInfo::generateUserInfoRecordProto()
 {
+    GOOGLE_PROTOBUF_VERIFY_VERSION;
     UserInfoRecordProto* record = new UserInfoRecordProto();
     record->set_userid(mUserID);
     record->set_username(mUserName);
@@ -124,10 +126,16 @@ void* UserInfo::generateUserInfoRecordProto()
     UnitList::iterator it = mAllUnitList.begin();
     for (; it != mAllUnitList.end(); ++it)
     {
-        BaseAttrProto* attr = record->add_unitattr();
-        BaseData* data = (*it)->getBaseData();
-        BaseDataHelper::saveData2AttrProto(data, attr);
+        for(int i = 0; i < 10; ++ i)
+        {
+            BaseAttrProto* attr = record->add_unitattr();
+            BaseData* data = (*it)->getBaseData();
+            BaseDataHelper::saveData2AttrProto(data, attr);
+            std::string* name = record->add_testname();
+            (*name) = "xxxx雪寒";
+        }
     }
+    std::string msg = record->SerializeAsString();
     return record;
 }
 

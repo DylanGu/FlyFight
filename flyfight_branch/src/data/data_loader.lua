@@ -37,7 +37,7 @@ function InitDataTable()
         print("-Lua : registerBaseData-")
     end
 
-    dofile("src/data/fighter_data.lua")
+    require("src/data/fighter_data.lua")
 
     return true
 end
