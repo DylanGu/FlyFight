@@ -12,6 +12,8 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "game/module/BaseUnit.h"
+#include "game/data_table/pb/UserInfoRecordProto.pb.h"
+
 
 class UserInfo : public cocos2d::Ref
 {
@@ -40,7 +42,7 @@ protected:
     
     ~UserInfo();
     
-    void* generateUserInfoRecordProto();
+    std::string generateUserInfoRecordProto();
     
 protected:
     
@@ -54,6 +56,8 @@ protected:
     
     int         mUserID;
     std::string mUserName;
+    
+    snowcold::UserInfoRecordProto record;
 };
 
 #endif /* defined(__flyfight_branch__UserInfo__) */

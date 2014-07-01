@@ -27,6 +27,8 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
+namespace snowcold {
+
 // Internal implementation detail -- do not call these.
 void  protobuf_AddDesc_UserInfoRecordProto_2eproto();
 void protobuf_AssignDesc_UserInfoRecordProto_2eproto();
@@ -254,12 +256,12 @@ class BaseAttrProto : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 eid() const;
   inline void set_eid(::google::protobuf::int32 value);
 
-  // required .BaseAttrProto.ePart part = 3 [default = kPart_Null];
+  // required .snowcold.BaseAttrProto.ePart part = 3 [default = kPart_Null];
   inline bool has_part() const;
   inline void clear_part();
   static const int kPartFieldNumber = 3;
-  inline ::BaseAttrProto_ePart part() const;
-  inline void set_part(::BaseAttrProto_ePart value);
+  inline ::snowcold::BaseAttrProto_ePart part() const;
+  inline void set_part(::snowcold::BaseAttrProto_ePart value);
 
   // required int32 level = 4 [default = 1];
   inline bool has_level() const;
@@ -268,19 +270,19 @@ class BaseAttrProto : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 level() const;
   inline void set_level(::google::protobuf::int32 value);
 
-  // required .BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
+  // required .snowcold.BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
   inline bool has_quality() const;
   inline void clear_quality();
   static const int kQualityFieldNumber = 5;
-  inline ::BaseAttrProto_eQuality quality() const;
-  inline void set_quality(::BaseAttrProto_eQuality value);
+  inline ::snowcold::BaseAttrProto_eQuality quality() const;
+  inline void set_quality(::snowcold::BaseAttrProto_eQuality value);
 
-  // required .BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
+  // required .snowcold.BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
   inline bool has_quarank() const;
   inline void clear_quarank();
   static const int kQuaRankFieldNumber = 6;
-  inline ::BaseAttrProto_eQualityRank quarank() const;
-  inline void set_quarank(::BaseAttrProto_eQualityRank value);
+  inline ::snowcold::BaseAttrProto_eQualityRank quarank() const;
+  inline void set_quarank(::snowcold::BaseAttrProto_eQualityRank value);
 
   // optional int32 hp = 7;
   inline bool has_hp() const;
@@ -310,7 +312,7 @@ class BaseAttrProto : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 atkspeed() const;
   inline void set_atkspeed(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:BaseAttrProto)
+  // @@protoc_insertion_point(class_scope:snowcold.BaseAttrProto)
  private:
   inline void set_has_sid();
   inline void clear_has_sid();
@@ -438,6 +440,18 @@ class UserInfoRecordProto : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 currentfighterid() const;
   inline void set_currentfighterid(::google::protobuf::int32 value);
 
+  // repeated .snowcold.BaseAttrProto unitAttr = 4;
+  inline int unitattr_size() const;
+  inline void clear_unitattr();
+  static const int kUnitAttrFieldNumber = 4;
+  inline const ::snowcold::BaseAttrProto& unitattr(int index) const;
+  inline ::snowcold::BaseAttrProto* mutable_unitattr(int index);
+  inline ::snowcold::BaseAttrProto* add_unitattr();
+  inline const ::google::protobuf::RepeatedPtrField< ::snowcold::BaseAttrProto >&
+      unitattr() const;
+  inline ::google::protobuf::RepeatedPtrField< ::snowcold::BaseAttrProto >*
+      mutable_unitattr();
+
   // repeated string testName = 5;
   inline int testname_size() const;
   inline void clear_testname();
@@ -454,19 +468,7 @@ class UserInfoRecordProto : public ::google::protobuf::Message {
   inline const ::google::protobuf::RepeatedPtrField< ::std::string>& testname() const;
   inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_testname();
 
-  // repeated .BaseAttrProto unitAttr = 4;
-  inline int unitattr_size() const;
-  inline void clear_unitattr();
-  static const int kUnitAttrFieldNumber = 4;
-  inline const ::BaseAttrProto& unitattr(int index) const;
-  inline ::BaseAttrProto* mutable_unitattr(int index);
-  inline ::BaseAttrProto* add_unitattr();
-  inline const ::google::protobuf::RepeatedPtrField< ::BaseAttrProto >&
-      unitattr() const;
-  inline ::google::protobuf::RepeatedPtrField< ::BaseAttrProto >*
-      mutable_unitattr();
-
-  // @@protoc_insertion_point(class_scope:UserInfoRecordProto)
+  // @@protoc_insertion_point(class_scope:snowcold.UserInfoRecordProto)
  private:
   inline void set_has_userid();
   inline void clear_has_userid();
@@ -481,8 +483,8 @@ class UserInfoRecordProto : public ::google::protobuf::Message {
   static ::std::string* _default_username_;
   ::google::protobuf::int32 userid_;
   ::google::protobuf::int32 currentfighterid_;
+  ::google::protobuf::RepeatedPtrField< ::snowcold::BaseAttrProto > unitattr_;
   ::google::protobuf::RepeatedPtrField< ::std::string> testname_;
-  ::google::protobuf::RepeatedPtrField< ::BaseAttrProto > unitattr_;
 
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(5 + 31) / 32];
@@ -545,7 +547,7 @@ inline void BaseAttrProto::set_eid(::google::protobuf::int32 value) {
   eid_ = value;
 }
 
-// required .BaseAttrProto.ePart part = 3 [default = kPart_Null];
+// required .snowcold.BaseAttrProto.ePart part = 3 [default = kPart_Null];
 inline bool BaseAttrProto::has_part() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -559,11 +561,11 @@ inline void BaseAttrProto::clear_part() {
   part_ = 0;
   clear_has_part();
 }
-inline ::BaseAttrProto_ePart BaseAttrProto::part() const {
-  return static_cast< ::BaseAttrProto_ePart >(part_);
+inline ::snowcold::BaseAttrProto_ePart BaseAttrProto::part() const {
+  return static_cast< ::snowcold::BaseAttrProto_ePart >(part_);
 }
-inline void BaseAttrProto::set_part(::BaseAttrProto_ePart value) {
-  assert(::BaseAttrProto_ePart_IsValid(value));
+inline void BaseAttrProto::set_part(::snowcold::BaseAttrProto_ePart value) {
+  assert(::snowcold::BaseAttrProto_ePart_IsValid(value));
   set_has_part();
   part_ = value;
 }
@@ -590,7 +592,7 @@ inline void BaseAttrProto::set_level(::google::protobuf::int32 value) {
   level_ = value;
 }
 
-// required .BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
+// required .snowcold.BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
 inline bool BaseAttrProto::has_quality() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -604,16 +606,16 @@ inline void BaseAttrProto::clear_quality() {
   quality_ = 1;
   clear_has_quality();
 }
-inline ::BaseAttrProto_eQuality BaseAttrProto::quality() const {
-  return static_cast< ::BaseAttrProto_eQuality >(quality_);
+inline ::snowcold::BaseAttrProto_eQuality BaseAttrProto::quality() const {
+  return static_cast< ::snowcold::BaseAttrProto_eQuality >(quality_);
 }
-inline void BaseAttrProto::set_quality(::BaseAttrProto_eQuality value) {
-  assert(::BaseAttrProto_eQuality_IsValid(value));
+inline void BaseAttrProto::set_quality(::snowcold::BaseAttrProto_eQuality value) {
+  assert(::snowcold::BaseAttrProto_eQuality_IsValid(value));
   set_has_quality();
   quality_ = value;
 }
 
-// required .BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
+// required .snowcold.BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
 inline bool BaseAttrProto::has_quarank() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
@@ -627,11 +629,11 @@ inline void BaseAttrProto::clear_quarank() {
   quarank_ = 0;
   clear_has_quarank();
 }
-inline ::BaseAttrProto_eQualityRank BaseAttrProto::quarank() const {
-  return static_cast< ::BaseAttrProto_eQualityRank >(quarank_);
+inline ::snowcold::BaseAttrProto_eQualityRank BaseAttrProto::quarank() const {
+  return static_cast< ::snowcold::BaseAttrProto_eQualityRank >(quarank_);
 }
-inline void BaseAttrProto::set_quarank(::BaseAttrProto_eQualityRank value) {
-  assert(::BaseAttrProto_eQualityRank_IsValid(value));
+inline void BaseAttrProto::set_quarank(::snowcold::BaseAttrProto_eQualityRank value) {
+  assert(::snowcold::BaseAttrProto_eQualityRank_IsValid(value));
   set_has_quarank();
   quarank_ = value;
 }
@@ -842,6 +844,31 @@ inline void UserInfoRecordProto::set_currentfighterid(::google::protobuf::int32 
   currentfighterid_ = value;
 }
 
+// repeated .snowcold.BaseAttrProto unitAttr = 4;
+inline int UserInfoRecordProto::unitattr_size() const {
+  return unitattr_.size();
+}
+inline void UserInfoRecordProto::clear_unitattr() {
+  unitattr_.Clear();
+}
+inline const ::snowcold::BaseAttrProto& UserInfoRecordProto::unitattr(int index) const {
+  return unitattr_.Get(index);
+}
+inline ::snowcold::BaseAttrProto* UserInfoRecordProto::mutable_unitattr(int index) {
+  return unitattr_.Mutable(index);
+}
+inline ::snowcold::BaseAttrProto* UserInfoRecordProto::add_unitattr() {
+  return unitattr_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::snowcold::BaseAttrProto >&
+UserInfoRecordProto::unitattr() const {
+  return unitattr_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::snowcold::BaseAttrProto >*
+UserInfoRecordProto::mutable_unitattr() {
+  return &unitattr_;
+}
+
 // repeated string testName = 5;
 inline int UserInfoRecordProto::testname_size() const {
   return testname_.size();
@@ -886,49 +913,26 @@ UserInfoRecordProto::mutable_testname() {
   return &testname_;
 }
 
-// repeated .BaseAttrProto unitAttr = 4;
-inline int UserInfoRecordProto::unitattr_size() const {
-  return unitattr_.size();
-}
-inline void UserInfoRecordProto::clear_unitattr() {
-  unitattr_.Clear();
-}
-inline const ::BaseAttrProto& UserInfoRecordProto::unitattr(int index) const {
-  return unitattr_.Get(index);
-}
-inline ::BaseAttrProto* UserInfoRecordProto::mutable_unitattr(int index) {
-  return unitattr_.Mutable(index);
-}
-inline ::BaseAttrProto* UserInfoRecordProto::add_unitattr() {
-  return unitattr_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::BaseAttrProto >&
-UserInfoRecordProto::unitattr() const {
-  return unitattr_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::BaseAttrProto >*
-UserInfoRecordProto::mutable_unitattr() {
-  return &unitattr_;
-}
-
 
 // @@protoc_insertion_point(namespace_scope)
+
+}  // namespace snowcold
 
 #ifndef SWIG
 namespace google {
 namespace protobuf {
 
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::BaseAttrProto_ePart>() {
-  return ::BaseAttrProto_ePart_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::snowcold::BaseAttrProto_ePart>() {
+  return ::snowcold::BaseAttrProto_ePart_descriptor();
 }
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::BaseAttrProto_eQuality>() {
-  return ::BaseAttrProto_eQuality_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::snowcold::BaseAttrProto_eQuality>() {
+  return ::snowcold::BaseAttrProto_eQuality_descriptor();
 }
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::BaseAttrProto_eQualityRank>() {
-  return ::BaseAttrProto_eQualityRank_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::snowcold::BaseAttrProto_eQualityRank>() {
+  return ::snowcold::BaseAttrProto_eQualityRank_descriptor();
 }
 
 }  // namespace google
