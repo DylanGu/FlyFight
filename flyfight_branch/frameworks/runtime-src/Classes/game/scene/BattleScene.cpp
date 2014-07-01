@@ -9,9 +9,7 @@
 #include "BattleScene.h"
 #include "engine/script/lua_tinker_manager.h"
 #include "game/scene/layer/BattleBgLayer.h"
-
-//test include
-#include "game/data_table/pb/BaseAttr.pb.h"
+#include "game/module/BaseFighter.h"
 
 USING_NS_CC;
 using namespace std;
@@ -31,7 +29,7 @@ BattleScene* BattleScene::create(std::string& name)
 
 BattleScene::BattleScene(std::string& name) : BaseScene(name),
     mBgLayer(NULL),
-    mFighter(NULL)
+    mOwnFighter(NULL)
 {
     
 }
@@ -41,10 +39,11 @@ BattleScene::~BattleScene()
     CC_SAFE_RELEASE(mBgLayer);
     mBgLayer = NULL;
     
-    CC_SAFE_RELEASE(mFighter);
-    mFighter = NULL;
+    CC_SAFE_RELEASE(mOwnFighter);
+    mOwnFighter = NULL;
 }
 
+////////////////////////////////////////////////////////////////////////////////////
 bool BattleScene::init()
 {
     //1.Load bg Layer
@@ -61,21 +60,23 @@ bool BattleScene::init()
     
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
     
-    //---test---
-    /*
-    const BaseAttr* attr = new BaseAttr();
-    eTest t = eTest::kT_1;
+    initSelfFighter();
     
+    return true;
+}
+
+bool BattleScene::initSelfFighter()
+{
+    /*
     mFighter = Sprite::create("res/module/fighter/f_1001.png");
     mFighter->retain();
     addChild(mFighter);
     mFighter->setPosition(320, 120);
     */
-    const BaseAttr* attr = new BaseAttr();
-    eTest t = eTest::kT_1;
-    
-    return true;
 }
+
+////////////////////////////////////////////////////////////////////////////////////
+
 
 bool BattleScene::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event)
 {
@@ -96,8 +97,8 @@ void BattleScene::onTouchMoved(cocos2d::Touch *touch, cocos2d::Event *event)
     const Point& p = target->convertToNodeSpace(touch->getLocation());
     const Point& offset = p - mPreTouchPoi;
     mPreTouchPoi = p;
-    const Point& cP = mFighter->getPosition();
-    mFighter->setPosition(cP + offset);
+    //const Point& cP = mFighter->getPosition();
+    //mFighter->setPosition(cP + offset);
 }
 
 void BattleScene::onTouchEnded(cocos2d::Touch *, cocos2d::Event *)
