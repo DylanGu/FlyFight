@@ -16,6 +16,8 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
+namespace snowcold {
+
 namespace {
 
 const ::google::protobuf::Descriptor* BaseAttrProto_descriptor_ = NULL;
@@ -69,8 +71,8 @@ void protobuf_AssignDesc_UserInfoRecordProto_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfoRecordProto, userid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfoRecordProto, username_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfoRecordProto, currentfighterid_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfoRecordProto, testname_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfoRecordProto, unitattr_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfoRecordProto, testname_),
   };
   UserInfoRecordProto_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -118,26 +120,28 @@ void protobuf_AddDesc_UserInfoRecordProto_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\031UserInfoRecordProto.proto\"\356\004\n\rBaseAttr"
-    "Proto\022\016\n\003sid\030\001 \002(\005:\0010\022\016\n\003eid\030\002 \002(\005:\0010\022.\n"
-    "\004part\030\003 \002(\0162\024.BaseAttrProto.ePart:\nkPart"
-    "_Null\022\020\n\005level\030\004 \002(\005:\0011\0228\n\007quality\030\005 \002(\016"
-    "2\027.BaseAttrProto.eQuality:\016kQuality_Whit"
-    "e\0228\n\007quaRank\030\006 \002(\0162\033.BaseAttrProto.eQual"
-    "ityRank:\nkQuaRank_0\022\n\n\002hp\030\007 \001(\005\022\017\n\007defen"
-    "ce\030\010 \001(\005\022\013\n\003atk\030\t \001(\005\022\020\n\010atkSpeed\030\n \001(\005\""
-    "a\n\005ePart\022\016\n\nkPart_Null\020\000\022\021\n\rkPart_Fighte"
-    "r\020\001\022\017\n\013kPart_Armor\020\002\022\021\n\rkPart_Wingman\020\003\022"
-    "\021\n\rkPart_Attache\020\004\"\202\001\n\010eQuality\022\021\n\rkQual"
-    "ity_Gray\020\000\022\022\n\016kQuality_White\020\001\022\022\n\016kQuali"
-    "ty_Green\020\002\022\021\n\rkQuality_Blue\020\003\022\023\n\017kQualit"
-    "y_Purple\020\004\022\023\n\017kQuality_Orange\020\005\"c\n\014eQual"
-    "ityRank\022\016\n\nkQuaRank_0\020\000\022\016\n\nkQuaRank_1\020\001\022"
-    "\016\n\nkQuaRank_2\020\002\022\020\n\014kQuaRank_Max\020\003\022\021\n\rkQu"
-    "aRank_Gold\020\004\"\216\001\n\023UserInfoRecordProto\022\021\n\006"
-    "userID\030\001 \002(\005:\0010\022\023\n\010userName\030\002 \002(\t:\001T\022\033\n\020"
-    "currentFighterID\030\003 \002(\005:\0010\022\020\n\010testName\030\005 "
-    "\003(\t\022 \n\010unitAttr\030\004 \003(\0132\016.BaseAttrProto", 797);
+    "\n\031UserInfoRecordProto.proto\022\010snowcold\"\211\005"
+    "\n\rBaseAttrProto\022\016\n\003sid\030\001 \002(\005:\0010\022\016\n\003eid\030\002"
+    " \002(\005:\0010\0227\n\004part\030\003 \002(\0162\035.snowcold.BaseAtt"
+    "rProto.ePart:\nkPart_Null\022\020\n\005level\030\004 \002(\005:"
+    "\0011\022A\n\007quality\030\005 \002(\0162 .snowcold.BaseAttrP"
+    "roto.eQuality:\016kQuality_White\022A\n\007quaRank"
+    "\030\006 \002(\0162$.snowcold.BaseAttrProto.eQuality"
+    "Rank:\nkQuaRank_0\022\n\n\002hp\030\007 \001(\005\022\017\n\007defence\030"
+    "\010 \001(\005\022\013\n\003atk\030\t \001(\005\022\020\n\010atkSpeed\030\n \001(\005\"a\n\005"
+    "ePart\022\016\n\nkPart_Null\020\000\022\021\n\rkPart_Fighter\020\001"
+    "\022\017\n\013kPart_Armor\020\002\022\021\n\rkPart_Wingman\020\003\022\021\n\r"
+    "kPart_Attache\020\004\"\202\001\n\010eQuality\022\021\n\rkQuality"
+    "_Gray\020\000\022\022\n\016kQuality_White\020\001\022\022\n\016kQuality_"
+    "Green\020\002\022\021\n\rkQuality_Blue\020\003\022\023\n\017kQuality_P"
+    "urple\020\004\022\023\n\017kQuality_Orange\020\005\"c\n\014eQuality"
+    "Rank\022\016\n\nkQuaRank_0\020\000\022\016\n\nkQuaRank_1\020\001\022\016\n\n"
+    "kQuaRank_2\020\002\022\020\n\014kQuaRank_Max\020\003\022\021\n\rkQuaRa"
+    "nk_Gold\020\004\"\227\001\n\023UserInfoRecordProto\022\021\n\006use"
+    "rID\030\001 \002(\005:\0010\022\023\n\010userName\030\002 \002(\t:\001T\022\033\n\020cur"
+    "rentFighterID\030\003 \002(\005:\0010\022)\n\010unitAttr\030\004 \003(\013"
+    "2\027.snowcold.BaseAttrProto\022\020\n\010testName\030\005 "
+    "\003(\tB\002H\001", 847);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "UserInfoRecordProto.proto", &protobuf_RegisterTypes);
   BaseAttrProto::default_instance_ = new BaseAttrProto();
@@ -369,7 +373,7 @@ bool BaseAttrProto::MergePartialFromCodedStream(
         break;
       }
 
-      // required .BaseAttrProto.ePart part = 3 [default = kPart_Null];
+      // required .snowcold.BaseAttrProto.ePart part = 3 [default = kPart_Null];
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
@@ -378,8 +382,8 @@ bool BaseAttrProto::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::BaseAttrProto_ePart_IsValid(value)) {
-            set_part(static_cast< ::BaseAttrProto_ePart >(value));
+          if (::snowcold::BaseAttrProto_ePart_IsValid(value)) {
+            set_part(static_cast< ::snowcold::BaseAttrProto_ePart >(value));
           } else {
             mutable_unknown_fields()->AddVarint(3, value);
           }
@@ -406,7 +410,7 @@ bool BaseAttrProto::MergePartialFromCodedStream(
         break;
       }
 
-      // required .BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
+      // required .snowcold.BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
@@ -415,8 +419,8 @@ bool BaseAttrProto::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::BaseAttrProto_eQuality_IsValid(value)) {
-            set_quality(static_cast< ::BaseAttrProto_eQuality >(value));
+          if (::snowcold::BaseAttrProto_eQuality_IsValid(value)) {
+            set_quality(static_cast< ::snowcold::BaseAttrProto_eQuality >(value));
           } else {
             mutable_unknown_fields()->AddVarint(5, value);
           }
@@ -427,7 +431,7 @@ bool BaseAttrProto::MergePartialFromCodedStream(
         break;
       }
 
-      // required .BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
+      // required .snowcold.BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
@@ -436,8 +440,8 @@ bool BaseAttrProto::MergePartialFromCodedStream(
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          if (::BaseAttrProto_eQualityRank_IsValid(value)) {
-            set_quarank(static_cast< ::BaseAttrProto_eQualityRank >(value));
+          if (::snowcold::BaseAttrProto_eQualityRank_IsValid(value)) {
+            set_quarank(static_cast< ::snowcold::BaseAttrProto_eQualityRank >(value));
           } else {
             mutable_unknown_fields()->AddVarint(6, value);
           }
@@ -540,7 +544,7 @@ void BaseAttrProto::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->eid(), output);
   }
 
-  // required .BaseAttrProto.ePart part = 3 [default = kPart_Null];
+  // required .snowcold.BaseAttrProto.ePart part = 3 [default = kPart_Null];
   if (has_part()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       3, this->part(), output);
@@ -551,13 +555,13 @@ void BaseAttrProto::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->level(), output);
   }
 
-  // required .BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
+  // required .snowcold.BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
   if (has_quality()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       5, this->quality(), output);
   }
 
-  // required .BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
+  // required .snowcold.BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
   if (has_quarank()) {
     ::google::protobuf::internal::WireFormatLite::WriteEnum(
       6, this->quarank(), output);
@@ -601,7 +605,7 @@ void BaseAttrProto::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->eid(), target);
   }
 
-  // required .BaseAttrProto.ePart part = 3 [default = kPart_Null];
+  // required .snowcold.BaseAttrProto.ePart part = 3 [default = kPart_Null];
   if (has_part()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       3, this->part(), target);
@@ -612,13 +616,13 @@ void BaseAttrProto::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->level(), target);
   }
 
-  // required .BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
+  // required .snowcold.BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
   if (has_quality()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       5, this->quality(), target);
   }
 
-  // required .BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
+  // required .snowcold.BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
   if (has_quarank()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
       6, this->quarank(), target);
@@ -669,7 +673,7 @@ int BaseAttrProto::ByteSize() const {
           this->eid());
     }
 
-    // required .BaseAttrProto.ePart part = 3 [default = kPart_Null];
+    // required .snowcold.BaseAttrProto.ePart part = 3 [default = kPart_Null];
     if (has_part()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->part());
@@ -682,13 +686,13 @@ int BaseAttrProto::ByteSize() const {
           this->level());
     }
 
-    // required .BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
+    // required .snowcold.BaseAttrProto.eQuality quality = 5 [default = kQuality_White];
     if (has_quality()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->quality());
     }
 
-    // required .BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
+    // required .snowcold.BaseAttrProto.eQualityRank quaRank = 6 [default = kQuaRank_0];
     if (has_quarank()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->quarank());
@@ -839,8 +843,8 @@ void BaseAttrProto::Swap(BaseAttrProto* other) {
 const int UserInfoRecordProto::kUserIDFieldNumber;
 const int UserInfoRecordProto::kUserNameFieldNumber;
 const int UserInfoRecordProto::kCurrentFighterIDFieldNumber;
-const int UserInfoRecordProto::kTestNameFieldNumber;
 const int UserInfoRecordProto::kUnitAttrFieldNumber;
+const int UserInfoRecordProto::kTestNameFieldNumber;
 #endif  // !_MSC_VER
 
 UserInfoRecordProto::UserInfoRecordProto()
@@ -908,8 +912,8 @@ void UserInfoRecordProto::Clear() {
     }
     currentfighterid_ = 0;
   }
-  testname_.Clear();
   unitattr_.Clear();
+  testname_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -968,7 +972,7 @@ bool UserInfoRecordProto::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .BaseAttrProto unitAttr = 4;
+      // repeated .snowcold.BaseAttrProto unitAttr = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -1039,7 +1043,7 @@ void UserInfoRecordProto::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->currentfighterid(), output);
   }
 
-  // repeated .BaseAttrProto unitAttr = 4;
+  // repeated .snowcold.BaseAttrProto unitAttr = 4;
   for (int i = 0; i < this->unitattr_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->unitattr(i), output);
@@ -1082,7 +1086,7 @@ void UserInfoRecordProto::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->currentfighterid(), target);
   }
 
-  // repeated .BaseAttrProto unitAttr = 4;
+  // repeated .snowcold.BaseAttrProto unitAttr = 4;
   for (int i = 0; i < this->unitattr_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -1131,19 +1135,19 @@ int UserInfoRecordProto::ByteSize() const {
     }
 
   }
-  // repeated string testName = 5;
-  total_size += 1 * this->testname_size();
-  for (int i = 0; i < this->testname_size(); i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->testname(i));
-  }
-
-  // repeated .BaseAttrProto unitAttr = 4;
+  // repeated .snowcold.BaseAttrProto unitAttr = 4;
   total_size += 1 * this->unitattr_size();
   for (int i = 0; i < this->unitattr_size(); i++) {
     total_size +=
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
         this->unitattr(i));
+  }
+
+  // repeated string testName = 5;
+  total_size += 1 * this->testname_size();
+  for (int i = 0; i < this->testname_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->testname(i));
   }
 
   if (!unknown_fields().empty()) {
@@ -1171,8 +1175,8 @@ void UserInfoRecordProto::MergeFrom(const ::google::protobuf::Message& from) {
 
 void UserInfoRecordProto::MergeFrom(const UserInfoRecordProto& from) {
   GOOGLE_CHECK_NE(&from, this);
-  testname_.MergeFrom(from.testname_);
   unitattr_.MergeFrom(from.unitattr_);
+  testname_.MergeFrom(from.testname_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_userid()) {
       set_userid(from.userid());
@@ -1213,8 +1217,8 @@ void UserInfoRecordProto::Swap(UserInfoRecordProto* other) {
     std::swap(userid_, other->userid_);
     std::swap(username_, other->username_);
     std::swap(currentfighterid_, other->currentfighterid_);
-    testname_.Swap(&other->testname_);
     unitattr_.Swap(&other->unitattr_);
+    testname_.Swap(&other->testname_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -1231,5 +1235,7 @@ void UserInfoRecordProto::Swap(UserInfoRecordProto* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
+
+}  // namespace snowcold
 
 // @@protoc_insertion_point(global_scope)

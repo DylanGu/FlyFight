@@ -1,4 +1,5 @@
-//package ;
+package snowcold;
+option optimize_for = SPEED;
 
 message BaseAttrProto
 {
@@ -48,6 +49,6 @@ message UserInfoRecordProto
     required int32 userID = 1[default = 0];
     required string userName = 2[default = "T"];
     required int32 currentFighterID = 3[default= 0];
-    repeated string testName = 5;
     repeated BaseAttrProto unitAttr = 4;
+    repeated string testName = 5;
 }

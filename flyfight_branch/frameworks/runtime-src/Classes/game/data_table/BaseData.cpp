@@ -10,6 +10,8 @@
 
 #include "game/data_table/pb/UserInfoRecordProto.pb.h"
 
+using namespace snowcold;
+
 BaseData* BaseData::create()
 {
     BaseData* pRet = new BaseData();
